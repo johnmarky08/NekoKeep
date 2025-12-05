@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             mainTabControl = new TabControl();
             tabLoginPage = new TabPage();
+            btnLoginPassShow = new Panel();
             btnRedirectRegister = new Panel();
             btnLogin = new Panel();
             txtLoginPassword = new TextBox();
             txtLoginEmail = new TextBox();
             tabRegisterPage = new TabPage();
+            btnRegisterPassShow = new Panel();
             btnRedirectLogin = new Panel();
             btnRegisterContinue = new Panel();
             txtRegisterPassword = new TextBox();
@@ -77,10 +79,12 @@
             mainTabControl.Size = new Size(1608, 968);
             mainTabControl.TabIndex = 0;
             mainTabControl.TabStop = false;
+            mainTabControl.SelectedIndexChanged += MainTabControl_SelectedIndexChanged;
             // 
             // tabLoginPage
             // 
             tabLoginPage.BackgroundImage = Properties.Resources.Login_Form;
+            tabLoginPage.Controls.Add(btnLoginPassShow);
             tabLoginPage.Controls.Add(btnRedirectRegister);
             tabLoginPage.Controls.Add(btnLogin);
             tabLoginPage.Controls.Add(txtLoginPassword);
@@ -92,6 +96,17 @@
             tabLoginPage.Text = "tabLoginPage";
             tabLoginPage.UseVisualStyleBackColor = true;
             // 
+            // btnLoginPassShow
+            // 
+            btnLoginPassShow.BackgroundImage = Properties.Resources.Show_Icon;
+            btnLoginPassShow.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLoginPassShow.Cursor = Cursors.Hand;
+            btnLoginPassShow.Location = new Point(958, 689);
+            btnLoginPassShow.Name = "btnLoginPassShow";
+            btnLoginPassShow.Size = new Size(60, 60);
+            btnLoginPassShow.TabIndex = 6;
+            btnLoginPassShow.Click += BtnLoginPassShow_Click;
+            // 
             // btnRedirectRegister
             // 
             btnRedirectRegister.Cursor = Cursors.Hand;
@@ -99,7 +114,7 @@
             btnRedirectRegister.Name = "btnRedirectRegister";
             btnRedirectRegister.Size = new Size(73, 25);
             btnRedirectRegister.TabIndex = 5;
-            btnRedirectRegister.Click += this.BtnRedirectRegister_Click;
+            btnRedirectRegister.Click += BtnRedirectRegister_Click;
             // 
             // btnLogin
             // 
@@ -108,6 +123,7 @@
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(99, 42);
             btnLogin.TabIndex = 4;
+            btnLogin.Click += BtnLogin_Click;
             // 
             // txtLoginPassword
             // 
@@ -116,8 +132,9 @@
             txtLoginPassword.Location = new Point(600, 704);
             txtLoginPassword.Name = "txtLoginPassword";
             txtLoginPassword.PlaceholderText = "Password";
-            txtLoginPassword.Size = new Size(400, 28);
+            txtLoginPassword.Size = new Size(361, 28);
             txtLoginPassword.TabIndex = 3;
+            txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // txtLoginEmail
             // 
@@ -133,6 +150,7 @@
             // 
             tabRegisterPage.BackgroundImage = Properties.Resources.Register_Form;
             tabRegisterPage.BackgroundImageLayout = ImageLayout.Center;
+            tabRegisterPage.Controls.Add(btnRegisterPassShow);
             tabRegisterPage.Controls.Add(btnRedirectLogin);
             tabRegisterPage.Controls.Add(btnRegisterContinue);
             tabRegisterPage.Controls.Add(txtRegisterPassword);
@@ -146,6 +164,17 @@
             tabRegisterPage.Text = "tabRagisterPage";
             tabRegisterPage.UseVisualStyleBackColor = true;
             // 
+            // btnRegisterPassShow
+            // 
+            btnRegisterPassShow.BackgroundImage = Properties.Resources.Show_Icon;
+            btnRegisterPassShow.BackgroundImageLayout = ImageLayout.Stretch;
+            btnRegisterPassShow.Cursor = Cursors.Hand;
+            btnRegisterPassShow.Location = new Point(958, 534);
+            btnRegisterPassShow.Name = "btnRegisterPassShow";
+            btnRegisterPassShow.Size = new Size(60, 60);
+            btnRegisterPassShow.TabIndex = 7;
+            btnRegisterPassShow.Click += BtnRegisterPassShow_Click;
+            // 
             // btnRedirectLogin
             // 
             btnRedirectLogin.Cursor = Cursors.Hand;
@@ -153,6 +182,7 @@
             btnRedirectLogin.Name = "btnRedirectLogin";
             btnRedirectLogin.Size = new Size(65, 28);
             btnRedirectLogin.TabIndex = 4;
+            btnRedirectLogin.Click += BtnRedirectLogin_Click;
             // 
             // btnRegisterContinue
             // 
@@ -161,6 +191,7 @@
             btnRegisterContinue.Name = "btnRegisterContinue";
             btnRegisterContinue.Size = new Size(116, 35);
             btnRegisterContinue.TabIndex = 3;
+            btnRegisterContinue.Click += BtnRegisterContinue_Click;
             // 
             // txtRegisterPassword
             // 
@@ -169,8 +200,9 @@
             txtRegisterPassword.Location = new Point(600, 549);
             txtRegisterPassword.Name = "txtRegisterPassword";
             txtRegisterPassword.PlaceholderText = "Password";
-            txtRegisterPassword.Size = new Size(400, 28);
+            txtRegisterPassword.Size = new Size(361, 28);
             txtRegisterPassword.TabIndex = 2;
+            txtRegisterPassword.UseSystemPasswordChar = true;
             // 
             // txtRegisterEmail
             // 
@@ -212,6 +244,7 @@
             btnRegisterContinue2.Name = "btnRegisterContinue2";
             btnRegisterContinue2.Size = new Size(153, 45);
             btnRegisterContinue2.TabIndex = 3;
+            btnRegisterContinue2.Click += BtnRegisterContinue2_Click;
             // 
             // registerMpinText
             // 
@@ -234,6 +267,9 @@
             pnlRegisterMpinHolder.Name = "pnlRegisterMpinHolder";
             pnlRegisterMpinHolder.Size = new Size(1081, 236);
             pnlRegisterMpinHolder.TabIndex = 1;
+            pnlRegisterMpinHolder.TabStop = true;
+            pnlRegisterMpinHolder.KeyDown += PnlRegisterMpinHolder_KeyDown;
+            pnlRegisterMpinHolder.PreviewKeyDown += PnlRegisterMpinHolder_PreviewKeyDown;
             // 
             // registerMpin_6
             // 
@@ -316,6 +352,7 @@
             btnRegisterContinue3.Name = "btnRegisterContinue3";
             btnRegisterContinue3.Size = new Size(156, 46);
             btnRegisterContinue3.TabIndex = 3;
+            btnRegisterContinue3.Click += BtnRegisterContinue3_Click;
             // 
             // btnRegisterCatSelectionBackward
             // 
@@ -324,6 +361,7 @@
             btnRegisterCatSelectionBackward.Name = "btnRegisterCatSelectionBackward";
             btnRegisterCatSelectionBackward.Size = new Size(253, 177);
             btnRegisterCatSelectionBackward.TabIndex = 2;
+            btnRegisterCatSelectionBackward.Click += BtnRegisterCatSelectionBackward_Click;
             // 
             // btnRegisterCatSelectionForward
             // 
@@ -332,6 +370,7 @@
             btnRegisterCatSelectionForward.Name = "btnRegisterCatSelectionForward";
             btnRegisterCatSelectionForward.Size = new Size(253, 177);
             btnRegisterCatSelectionForward.TabIndex = 1;
+            btnRegisterCatSelectionForward.Click += BtnRegisterCatSelectionForward_Click;
             // 
             // registerCatGif
             // 
@@ -351,6 +390,7 @@
             ClientSize = new Size(1600, 941);
             Controls.Add(mainTabControl);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -367,34 +407,41 @@
             ResumeLayout(false);
         }
 
+        private void BtnRegisterCatSelectionBackward_Click1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
-        private TabControl mainTabControl;
-        private TabPage tabRegisterPage;
-        private TextBox txtRegisterDisplayName;
-        private TextBox txtRegisterPassword;
-        private TextBox txtRegisterEmail;
-        private Panel btnRedirectLogin;
-        private Panel btnRegisterContinue;
-        private TabPage tabRegisterMpinPage;
-        private Panel pnlRegisterMpinHolder;
-        private Panel registerMpin_1;
-        private Panel registerMpin_6;
-        private Panel registerMpin_5;
-        private Panel registerMpin_4;
-        private Panel registerMpin_3;
-        private Panel registerMpin_2;
-        private Panel registerMpinText;
-        private Panel btnRegisterContinue2;
-        private TabPage tabRegisterCatSelection;
-        private PictureBox registerCatGif;
-        private Panel btnRegisterContinue3;
-        private Panel btnRegisterCatSelectionBackward;
-        private Panel btnRegisterCatSelectionForward;
-        private TabPage tabLoginPage;
-        private TextBox txtLoginEmail;
-        private TextBox txtLoginPassword;
-        private Panel btnRedirectRegister;
-        private Panel btnLogin;
+        protected TabControl mainTabControl;
+        protected TabPage tabRegisterPage;
+        protected TextBox txtRegisterDisplayName;
+        protected TextBox txtRegisterPassword;
+        protected TextBox txtRegisterEmail;
+        protected Panel btnRedirectLogin;
+        protected Panel btnRegisterContinue;
+        protected TabPage tabRegisterMpinPage;
+        protected Panel pnlRegisterMpinHolder;
+        protected Panel registerMpin_1;
+        protected Panel registerMpin_6;
+        protected Panel registerMpin_5;
+        protected Panel registerMpin_4;
+        protected Panel registerMpin_3;
+        protected Panel registerMpin_2;
+        protected Panel registerMpinText;
+        protected Panel btnRegisterContinue2;
+        protected TabPage tabRegisterCatSelection;
+        protected PictureBox registerCatGif;
+        protected Panel btnRegisterContinue3;
+        protected Panel btnRegisterCatSelectionBackward;
+        protected Panel btnRegisterCatSelectionForward;
+        protected TabPage tabLoginPage;
+        protected TextBox txtLoginEmail;
+        protected TextBox txtLoginPassword;
+        protected Panel btnRedirectRegister;
+        protected Panel btnLogin;
+        protected Panel btnLoginPassShow;
+        protected Panel btnRegisterPassShow;
     }
 }

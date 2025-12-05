@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using NekoKeep.Backend.Databases;
 
 namespace NekoKeep
 {
@@ -12,6 +12,11 @@ namespace NekoKeep
 
         private async void FrmLoadingScreen_Shown(object sender, EventArgs e)
         {
+            // Connect to MainDB and create all tables if they don't exist or delete them and recreate them
+            MainDB.Connect();
+            // MainDB.DropAllTables(); // Uncomment to drop tables 
+            MainDB.CreateAllTables();
+
             await Task.Delay(3000);
             Close();
         }
