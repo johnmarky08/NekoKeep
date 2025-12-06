@@ -70,6 +70,16 @@ namespace NekoKeep.Backend.Databases
             }
         }
 
+        // Check if email exists in database
+        public static bool CheckUserEmail(string email)
+        {
+            string sql = "SELECT COUNT(*) FROM Users WHERE email = @email;";
+            using var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@email", email);
+            long count = (long)cmd.ExecuteScalar();
+            return count > 0;
+        }
+
         // Updates user password both locally and in database
         public static void UpdateUserPassword(int userId, string password)
         {

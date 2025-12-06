@@ -1,6 +1,6 @@
-﻿namespace NekoKeep
+﻿namespace NekoKeep.Forms
 {
-    partial class frmMain
+    partial class FrmOnboarding
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOnboarding));
             mainTabControl = new TabControl();
             tabLoginPage = new TabPage();
             btnLoginPassShow = new Panel();
@@ -389,6 +389,7 @@
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1600, 941);
             Controls.Add(mainTabControl);
+            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             MaximizeBox = false;
@@ -405,11 +406,6 @@
             tabRegisterCatSelection.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)registerCatGif).EndInit();
             ResumeLayout(false);
-        }
-
-        private void BtnRegisterCatSelectionBackward_Click1(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

@@ -1,12 +1,16 @@
 ﻿using NekoKeep.Backend.Databases;
+using System.Reflection;
 
-namespace NekoKeep
+namespace NekoKeep.Forms
 {
-    public partial class FrmLoadingScreen : Form
+    public partial class FrmLoading : Form
     {
-        public FrmLoadingScreen()
+        public FrmLoading()
         {
             InitializeComponent();
+
+            var prop = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            prop?.SetValue(this, true, null);
             Shown += FrmLoadingScreen_Shown!;
         }
 

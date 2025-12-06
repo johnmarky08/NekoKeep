@@ -113,6 +113,106 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MPIN_0 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_1 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_2 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_3 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_4 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_5 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_6 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_7 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_8 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MPIN_9 {
+            get {
+                object obj = ResourceManager.GetObject("MPIN_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MPIN_Blank {
             get {
                 object obj = ResourceManager.GetObject("MPIN Blank", resourceCulture);
@@ -183,6 +283,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Re_enter_your_MPIN {
+            get {
+                object obj = ResourceManager.GetObject("Re-enter your MPIN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Register_Form {
             get {
                 object obj = ResourceManager.GetObject("Register Form", resourceCulture);
@@ -196,6 +306,16 @@ namespace NekoKeep.Properties {
         internal static System.Drawing.Bitmap Show_Icon {
             get {
                 object obj = ResourceManager.GetObject("Show Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Twilight_Background {
+            get {
+                object obj = ResourceManager.GetObject("Twilight Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

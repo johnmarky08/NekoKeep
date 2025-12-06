@@ -1,6 +1,6 @@
-﻿namespace NekoKeep
+﻿namespace NekoKeep.Forms
 {
-    partial class FrmLoadingScreen
+    partial class FrmLoading
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoadingScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoading));
             loadingGif = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)loadingGif).BeginInit();
             SuspendLayout();
@@ -50,6 +50,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(400, 240);
             Controls.Add(loadingGif);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLoadingScreen";

@@ -1,3 +1,5 @@
+using NekoKeep.Forms;
+
 namespace NekoKeep
 {
     internal static class Program
@@ -15,12 +17,15 @@ namespace NekoKeep
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            using (var splash = new FrmLoadingScreen())
+            using (var splash = new FrmLoading())
             {
                 splash.ShowDialog();
             }
 
-            Application.Run(new frmMain());
+            var ctx = new AppContext();
+            var login = new FrmOnboarding(ctx);
+            ctx.SwitchTo(login);
+            Application.Run(ctx);
         }
     }
 }

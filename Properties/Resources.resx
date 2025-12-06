@@ -121,17 +121,35 @@
   <data name="NekoKeep-Gray Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NekoKeep-Gray Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MPIN_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NekoKeep-Orange Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NekoKeep-Orange Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN Filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN Filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Register Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MPIN_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NekoKeep-Night Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NekoKeep-Night Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hide Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hide Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,22 +160,40 @@
   <data name="Enter your MPIN Text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enter your MPIN Text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NekoKeep-Bluey Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NekoKeep-Bluey Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hide Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hide Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MPIN_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MPIN_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NekoKeep-Bluey Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NekoKeep-Bluey Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Show Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NekoKeep-Night Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NekoKeep-Night Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MPIN_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MPIN Filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MPIN Filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MPIN_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Twilight Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Twilight Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,16 +1,30 @@
 using NekoKeep.Backend;
 using NekoKeep.Backend.Databases;
 using NekoKeep.Backend.Interfaces;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Reflection;
 
-namespace NekoKeep
+namespace NekoKeep.Forms
 {
-    public partial class frmMain : Form
+    public partial class FrmOnboarding : Form
     {
-        public frmMain()
+        private readonly AppContext ctx;
+        public FrmOnboarding(AppContext ctx)
         {
             InitializeComponent();
+            this.ctx = ctx;
+
+            EnableDoubleBuffer(this);
+            EnableDoubleBuffer(mainTabControl);
+            foreach (TabPage tabPage in mainTabControl.TabPages)
+                EnableDoubleBuffer(tabPage);
         }
+
+        private static void EnableDoubleBuffer(Control control)
+        {
+            var prop = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            prop?.SetValue(control, true, null);
+        }
+
         private void ClearLoginFields()
         {
             txtLoginEmail.Clear();
@@ -35,7 +49,8 @@ namespace NekoKeep
 
             if (user == 1)
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var mainForm = new FrmMain(ctx);
+                ctx.SwitchTo(mainForm);
             }
             else if (user == -1)
             {
@@ -101,6 +116,11 @@ namespace NekoKeep
                 Utils.ThrowError("Please enter a valid email address.");
                 success = false;
             }
+            else if (UsersDB.CheckUserEmail(txtRegisterEmail.Text))
+            {
+                Utils.ThrowError("This email is already registered. Please use a different email.");
+                success = false;
+            }
             else if (!Utils.ValidatePassword(txtRegisterPassword.Text))
             {
                 Utils.ThrowError("Your password must be at least 8 characters and include uppercase and lowercase letters, a number, and a special character.");
@@ -111,7 +131,8 @@ namespace NekoKeep
             else mainTabControl.SelectedTab = tabRegisterMpinPage;
         }
 
-        private static string mpin = "";
+        private string mpin = "";
+        private string mpin2 = "";
         private void PnlRegisterMpinHolder_PreviewKeyDown(object? sender, PreviewKeyDownEventArgs e)
         {
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right ||
@@ -167,22 +188,41 @@ namespace NekoKeep
                 if (results.Length > 0 && results[0] is Panel panel)
                 {
                     panel.BackgroundImage = i <= mpin.Length
-                        ? Properties.Resources.MPIN_Filled
+                        ? Properties.Resources.ResourceManager.GetObject("MPIN_" + mpin[i - 1]) as Bitmap
                         : Properties.Resources.MPIN_Blank;
+
+                    panel.Invalidate();
+                    panel.Update();
                 }
             }
         }
 
+        private bool IsMpinCompleted = false;
         private void BtnRegisterContinue2_Click(object sender, EventArgs e)
         {
-            if (Utils.ValidateMpin(mpin))
+            if (!IsMpinCompleted && mpin.Length == 6)
+            {
+                mpin2 = mpin;
+                mpin = "";
+                UpdateMpinDisplay();
+                IsMpinCompleted = true;
+                registerMpinText.BackgroundImage = Properties.Resources.Re_enter_your_MPIN;
+            }
+            else if (Utils.ValidateMpin(mpin) && mpin2.Equals(mpin) && mpin.Length == 6)
             {
                 mainTabControl.SelectedTab = tabRegisterCatSelection;
             }
             else
             {
-                Utils.ThrowError("MPIN must be exactly 6 digits.");
+                bool hasMpin2 = string.IsNullOrWhiteSpace(mpin2) && mpin.Length == 6;
+                Utils.ThrowError(hasMpin2
+                    ? "Please enter a six-digit MPIN."
+                    : "The MPIN entries do not match. Please verify and try again.");
+
                 mpin = "";
+                mpin2 = "";
+                IsMpinCompleted = false;
+                registerMpinText.BackgroundImage = Properties.Resources.Enter_your_MPIN_Text;
                 UpdateMpinDisplay();
             }
         }
