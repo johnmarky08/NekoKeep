@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.Group_7;
+            panel1.BackgroundImageLayout = ImageLayout.Center;
+            panel1.Location = new Point(646, 53);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(264, 75);
+            panel1.TabIndex = 0;
             // 
             // FrmMainAddAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.BG;
+            BackgroundImage = Properties.Resources.Main_UI__Custom___Add_Account__Screen1;
             ClientSize = new Size(1584, 941);
+            Controls.Add(panel1);
             Name = "FrmMainAddAccount";
-            Text = "FrmMainAddAccount";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel1;
     }
 }

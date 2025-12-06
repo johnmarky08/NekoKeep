@@ -263,6 +263,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Group_7 {
+            get {
+                object obj = ResourceManager.GetObject("Group 7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hide_Icon {
             get {
                 object obj = ResourceManager.GetObject("Hide Icon", resourceCulture);
@@ -306,6 +316,26 @@ namespace NekoKeep.Properties {
         internal static System.Drawing.Bitmap Main_Context_Menu {
             get {
                 object obj = ResourceManager.GetObject("Main Context Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen {
+            get {
+                object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen1 {
+            get {
+                object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
