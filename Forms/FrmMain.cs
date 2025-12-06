@@ -66,5 +66,25 @@ namespace NekoKeep.Forms
             var settingsForm = new FrmSettings(ctx);
             ctx.SwitchTo(settingsForm);
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCtxMain_Profile_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
