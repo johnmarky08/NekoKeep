@@ -73,6 +73,7 @@
             btnCtxMain_Settings.Name = "btnCtxMain_Settings";
             btnCtxMain_Settings.Size = new Size(192, 60);
             btnCtxMain_Settings.TabIndex = 2;
+            btnCtxMain_Settings.Click += BtnCtxMain_Settings_Click;
             // 
             // btnCtxMain_Logout
             // 

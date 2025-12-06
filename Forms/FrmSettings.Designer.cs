@@ -32,36 +32,54 @@
             btnSettingsAccount = new Panel();
             btnSettingsBackup = new Panel();
             btnSettingsAbout = new Panel();
+            btnCloseMainContextMenu = new Panel();
             SuspendLayout();
             // 
             // btnSettingsAccount
             // 
             btnSettingsAccount.BackColor = Color.Transparent;
+            btnSettingsAccount.BackgroundImage = Properties.Resources.account__selected_;
             btnSettingsAccount.BackgroundImageLayout = ImageLayout.Center;
+            btnSettingsAccount.Cursor = Cursors.Hand;
             btnSettingsAccount.Location = new Point(52, 70);
             btnSettingsAccount.Name = "btnSettingsAccount";
             btnSettingsAccount.Size = new Size(419, 133);
             btnSettingsAccount.TabIndex = 0;
+            btnSettingsAccount.Click += BtnSettingsAccount_Click;
             // 
             // btnSettingsBackup
             // 
             btnSettingsBackup.BackColor = Color.Transparent;
             btnSettingsBackup.BackgroundImage = Properties.Resources.Backup;
             btnSettingsBackup.BackgroundImageLayout = ImageLayout.Center;
+            btnSettingsBackup.Cursor = Cursors.Hand;
             btnSettingsBackup.Location = new Point(52, 203);
             btnSettingsBackup.Name = "btnSettingsBackup";
             btnSettingsBackup.Size = new Size(419, 135);
             btnSettingsBackup.TabIndex = 1;
+            btnSettingsBackup.Click += BtnSettingsBackup_Click;
             // 
             // btnSettingsAbout
             // 
             btnSettingsAbout.BackColor = Color.Transparent;
             btnSettingsAbout.BackgroundImage = Properties.Resources.About_Us;
             btnSettingsAbout.BackgroundImageLayout = ImageLayout.Center;
+            btnSettingsAbout.Cursor = Cursors.Hand;
             btnSettingsAbout.Location = new Point(52, 338);
             btnSettingsAbout.Name = "btnSettingsAbout";
             btnSettingsAbout.Size = new Size(419, 135);
             btnSettingsAbout.TabIndex = 2;
+            btnSettingsAbout.Click += BtnSettingsAbout_Click;
+            // 
+            // btnCloseMainContextMenu
+            // 
+            btnCloseMainContextMenu.BackColor = Color.Transparent;
+            btnCloseMainContextMenu.Cursor = Cursors.Hand;
+            btnCloseMainContextMenu.Location = new Point(1515, 41);
+            btnCloseMainContextMenu.Name = "btnCloseMainContextMenu";
+            btnCloseMainContextMenu.Size = new Size(62, 61);
+            btnCloseMainContextMenu.TabIndex = 3;
+            btnCloseMainContextMenu.Click += BtnCloseMainContextMenu_Click;
             // 
             // FrmSettings
             // 
@@ -70,6 +88,7 @@
             BackgroundImage = Properties.Resources.Settings_Screen;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1600, 941);
+            Controls.Add(btnCloseMainContextMenu);
             Controls.Add(btnSettingsAbout);
             Controls.Add(btnSettingsBackup);
             Controls.Add(btnSettingsAccount);
@@ -88,5 +107,6 @@
         private Panel btnSettingsAccount;
         private Panel btnSettingsBackup;
         private Panel btnSettingsAbout;
+        private Panel btnCloseMainContextMenu;
     }
 }

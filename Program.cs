@@ -23,7 +23,7 @@ namespace NekoKeep
             }
 
             var ctx = new AppContext();
-            var login = new FrmSettings(ctx);
+            var login = new FrmOnboarding(ctx);
             ctx.SwitchTo(login);
             Application.Run(ctx);
         }

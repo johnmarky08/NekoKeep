@@ -60,5 +60,11 @@ namespace NekoKeep.Forms
             var profile = new FrmProfile(ctx);
             ctx.SwitchTo(profile);
         }
+
+        private void BtnCtxMain_Settings_Click(object sender, EventArgs e)
+        {
+            var settingsForm = new FrmSettings(ctx);
+            ctx.SwitchTo(settingsForm);
+        }
     }
 }
