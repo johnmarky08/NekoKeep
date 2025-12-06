@@ -63,9 +63,79 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap About_Us {
+            get {
+                object obj = ResourceManager.GetObject("About Us", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap About_us__selected_ {
+            get {
+                object obj = ResourceManager.GetObject("About us (selected)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Account {
+            get {
+                object obj = ResourceManager.GetObject("Account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap account__selected_ {
+            get {
+                object obj = ResourceManager.GetObject("account (selected)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Backup {
+            get {
+                object obj = ResourceManager.GetObject("Backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backup__selected_ {
+            get {
+                object obj = ResourceManager.GetObject("backup (selected)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cat_Atelier_Form {
             get {
                 object obj = ResourceManager.GetObject("Cat Atelier Form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cat_Bubble {
+            get {
+                object obj = ResourceManager.GetObject("Cat Bubble", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +176,26 @@ namespace NekoKeep.Properties {
         internal static System.Drawing.Bitmap Login_Form {
             get {
                 object obj = ResourceManager.GetObject("Login Form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_Context_Menu {
+            get {
+                object obj = ResourceManager.GetObject("Main Context Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MAIN_UI_Screen {
+            get {
+                object obj = ResourceManager.GetObject("MAIN UI Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +373,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Profile_Screen__Change_Cat_ {
+            get {
+                object obj = ResourceManager.GetObject("Profile Screen (Change Cat)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Re_enter_your_MPIN {
             get {
                 object obj = ResourceManager.GetObject("Re-enter your MPIN", resourceCulture);
@@ -303,9 +403,9 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Show_Icon {
+        internal static System.Drawing.Bitmap Settings_Screen {
             get {
-                object obj = ResourceManager.GetObject("Show Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +413,9 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Twilight_Background {
+        internal static System.Drawing.Bitmap Show_Icon {
             get {
-                object obj = ResourceManager.GetObject("Twilight Background", resourceCulture);
+                object obj = ResourceManager.GetObject("Show Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
