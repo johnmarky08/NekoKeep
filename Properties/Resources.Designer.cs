@@ -22,7 +22,7 @@ namespace NekoKeep.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace NekoKeep.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NekoKeep.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace NekoKeep.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _ {
+        public static System.Drawing.Bitmap _ {
             get {
                 object obj = ResourceManager.GetObject("+", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        public static System.Drawing.Bitmap _1 {
             get {
                 object obj = ResourceManager.GetObject("+1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About_Us {
+        public static System.Drawing.Bitmap About_Us {
             get {
                 object obj = ResourceManager.GetObject("About Us", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About_us__selected_ {
+        public static System.Drawing.Bitmap About_us__selected_ {
             get {
                 object obj = ResourceManager.GetObject("About us (selected)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Account {
+        public static System.Drawing.Bitmap Account {
             get {
                 object obj = ResourceManager.GetObject("Account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Account__Change_Email__Screen {
+        public static System.Drawing.Bitmap Account__Change_Email__Screen {
             get {
                 object obj = ResourceManager.GetObject("Account (Change-Email) Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Account__Change_MPIN__Screen {
+        public static System.Drawing.Bitmap Account__Change_MPIN__Screen {
             get {
                 object obj = ResourceManager.GetObject("Account (Change-MPIN) Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Account__Change_Password__Screen {
+        public static System.Drawing.Bitmap Account__Change_Password__Screen {
             get {
                 object obj = ResourceManager.GetObject("Account (Change-Password) Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap account__selected_ {
+        public static System.Drawing.Bitmap account__selected_ {
             get {
                 object obj = ResourceManager.GetObject("account (selected)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Actions_Line_1 {
+        public static System.Drawing.Bitmap Actions_Line_1 {
             get {
                 object obj = ResourceManager.GetObject("Actions Line 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Actions_Line_2 {
+        public static System.Drawing.Bitmap Actions_Line_2 {
             get {
                 object obj = ResourceManager.GetObject("Actions Line 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Account_Section {
+        public static System.Drawing.Bitmap Add_Account_Section {
             get {
                 object obj = ResourceManager.GetObject("Add Account Section", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Account_Section1 {
+        public static System.Drawing.Bitmap Add_Account_Section1 {
             get {
                 object obj = ResourceManager.GetObject("Add Account Section1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Account_Section2 {
+        public static System.Drawing.Bitmap Add_Account_Section2 {
             get {
                 object obj = ResourceManager.GetObject("Add Account Section2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Note_btn {
+        public static System.Drawing.Bitmap Add_Note_btn {
             get {
                 object obj = ResourceManager.GetObject("Add Note btn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Tag {
+        public static System.Drawing.Bitmap Add_Tag {
             get {
                 object obj = ResourceManager.GetObject("Add Tag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +223,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddTag {
+        public static System.Drawing.Bitmap AddTag {
             get {
                 object obj = ResourceManager.GetObject("AddTag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +233,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddTag1 {
+        public static System.Drawing.Bitmap AddTag1 {
             get {
                 object obj = ResourceManager.GetObject("AddTag1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +243,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Backup {
+        public static System.Drawing.Bitmap Backup {
             get {
                 object obj = ResourceManager.GetObject("Backup", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +253,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backup__selected_ {
+        public static System.Drawing.Bitmap backup__selected_ {
             get {
                 object obj = ResourceManager.GetObject("backup (selected)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +263,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BG {
+        public static System.Drawing.Bitmap BG {
             get {
                 object obj = ResourceManager.GetObject("BG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +273,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cat_Atelier_Form {
+        public static System.Drawing.Bitmap Cat_Atelier_Form {
             get {
                 object obj = ResourceManager.GetObject("Cat Atelier Form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +283,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cat_Bubble {
+        public static System.Drawing.Bitmap Cat_Bubble {
             get {
                 object obj = ResourceManager.GetObject("Cat Bubble", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +293,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cbox {
+        public static System.Drawing.Bitmap cbox {
             get {
                 object obj = ResourceManager.GetObject("cbox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,7 +303,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cbox1 {
+        public static System.Drawing.Bitmap cbox1 {
             get {
                 object obj = ResourceManager.GetObject("cbox1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +313,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Custom_Type {
+        public static System.Drawing.Bitmap Custom_Type {
             get {
                 object obj = ResourceManager.GetObject("Custom Type", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +323,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Custom_Type1 {
+        public static System.Drawing.Bitmap Custom_Type1 {
             get {
                 object obj = ResourceManager.GetObject("Custom Type1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -333,7 +333,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_Section {
+        public static System.Drawing.Bitmap Delete_Section {
             get {
                 object obj = ResourceManager.GetObject("Delete Section", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -343,7 +343,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_Section1 {
+        public static System.Drawing.Bitmap Delete_Section1 {
             get {
                 object obj = ResourceManager.GetObject("Delete Section1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +353,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_Section2 {
+        public static System.Drawing.Bitmap Delete_Section2 {
             get {
                 object obj = ResourceManager.GetObject("Delete Section2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -363,7 +363,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_Section3 {
+        public static System.Drawing.Bitmap Delete_Section3 {
             get {
                 object obj = ResourceManager.GetObject("Delete Section3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -373,7 +373,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Edit_Icon_1 {
+        public static System.Drawing.Bitmap Edit_Icon_1 {
             get {
                 object obj = ResourceManager.GetObject("Edit Icon 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -383,7 +383,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Enter_your_MPIN_Text {
+        public static System.Drawing.Bitmap Enter_your_MPIN_Text {
             get {
                 object obj = ResourceManager.GetObject("Enter your MPIN Text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -393,7 +393,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_18 {
+        public static System.Drawing.Bitmap Group_18 {
             get {
                 object obj = ResourceManager.GetObject("Group 18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -403,7 +403,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_18__1_ {
+        public static System.Drawing.Bitmap Group_18__1_ {
             get {
                 object obj = ResourceManager.GetObject("Group 18 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -413,7 +413,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_18__2_ {
+        public static System.Drawing.Bitmap Group_18__2_ {
             get {
                 object obj = ResourceManager.GetObject("Group 18 (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -423,7 +423,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_18__3_ {
+        public static System.Drawing.Bitmap Group_18__3_ {
             get {
                 object obj = ResourceManager.GetObject("Group 18 (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -433,7 +433,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_7 {
+        public static System.Drawing.Bitmap Group_7 {
             get {
                 object obj = ResourceManager.GetObject("Group 7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -443,7 +443,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hide_Icon {
+        public static System.Drawing.Bitmap Hide_Icon {
             get {
                 object obj = ResourceManager.GetObject("Hide Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -453,7 +453,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap import_btn {
+        public static System.Drawing.Bitmap import_btn {
             get {
                 object obj = ResourceManager.GetObject("import_btn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -463,7 +463,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap import_btn_disable {
+        public static System.Drawing.Bitmap import_btn_disable {
             get {
                 object obj = ResourceManager.GetObject("import_btn_disable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -473,7 +473,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loading {
+        public static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -483,7 +483,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Login_Form {
+        public static System.Drawing.Bitmap Login_Form {
             get {
                 object obj = ResourceManager.GetObject("Login Form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -493,7 +493,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logout {
+        public static System.Drawing.Bitmap Logout {
             get {
                 object obj = ResourceManager.GetObject("Logout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -503,7 +503,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Main_Context_Menu {
+        public static System.Drawing.Bitmap Main_Context_Menu {
             get {
                 object obj = ResourceManager.GetObject("Main Context Menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -513,7 +513,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen {
+        public static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen {
             get {
                 object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -523,7 +523,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen1 {
+        public static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen1 {
             get {
                 object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -533,7 +533,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MAIN_UI_Screen {
+        public static System.Drawing.Bitmap MAIN_UI_Screen {
             get {
                 object obj = ResourceManager.GetObject("MAIN UI Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -543,7 +543,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_0 {
+        public static System.Drawing.Bitmap MPIN_0 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -553,7 +553,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_1 {
+        public static System.Drawing.Bitmap MPIN_1 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -563,7 +563,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_2 {
+        public static System.Drawing.Bitmap MPIN_2 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -573,7 +573,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_3 {
+        public static System.Drawing.Bitmap MPIN_3 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -583,7 +583,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_4 {
+        public static System.Drawing.Bitmap MPIN_4 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -593,7 +593,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_5 {
+        public static System.Drawing.Bitmap MPIN_5 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -603,7 +603,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_6 {
+        public static System.Drawing.Bitmap MPIN_6 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -613,7 +613,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_7 {
+        public static System.Drawing.Bitmap MPIN_7 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -623,7 +623,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_8 {
+        public static System.Drawing.Bitmap MPIN_8 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -633,7 +633,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_9 {
+        public static System.Drawing.Bitmap MPIN_9 {
             get {
                 object obj = ResourceManager.GetObject("MPIN_9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -643,7 +643,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_Asterisk__Backup_ {
+        public static System.Drawing.Bitmap MPIN_Asterisk__Backup_ {
             get {
                 object obj = ResourceManager.GetObject("MPIN Asterisk (Backup)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -653,7 +653,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_Blank {
+        public static System.Drawing.Bitmap MPIN_Blank {
             get {
                 object obj = ResourceManager.GetObject("MPIN Blank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -663,7 +663,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_Blank__Backup_ {
+        public static System.Drawing.Bitmap MPIN_Blank__Backup_ {
             get {
                 object obj = ResourceManager.GetObject("MPIN Blank (Backup)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -673,7 +673,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_Filled {
+        public static System.Drawing.Bitmap MPIN_Filled {
             get {
                 object obj = ResourceManager.GetObject("MPIN Filled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -683,7 +683,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MPIN_Form {
+        public static System.Drawing.Bitmap MPIN_Form {
             get {
                 object obj = ResourceManager.GetObject("MPIN Form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -693,7 +693,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NekoKeep_Bluey_Cat1 {
+        public static System.Drawing.Bitmap NekoKeep_Bluey_Cat1 {
             get {
                 object obj = ResourceManager.GetObject("NekoKeep-Bluey Cat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -703,7 +703,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NekoKeep_Gray_Cat1 {
+        public static System.Drawing.Bitmap NekoKeep_Gray_Cat1 {
             get {
                 object obj = ResourceManager.GetObject("NekoKeep-Gray Cat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -713,7 +713,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NekoKeep_Night_Cat1 {
+        public static System.Drawing.Bitmap NekoKeep_Night_Cat1 {
             get {
                 object obj = ResourceManager.GetObject("NekoKeep-Night Cat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -723,7 +723,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NekoKeep_Orange_Cat1 {
+        public static System.Drawing.Bitmap NekoKeep_Orange_Cat1 {
             get {
                 object obj = ResourceManager.GetObject("NekoKeep-Orange Cat1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -733,7 +733,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Profile_Screen__Change_Cat_ {
+        public static System.Drawing.Bitmap Profile_Screen__Change_Cat_ {
             get {
                 object obj = ResourceManager.GetObject("Profile Screen (Change Cat)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -743,7 +743,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Re_enter_your_MPIN {
+        public static System.Drawing.Bitmap Re_enter_your_MPIN {
             get {
                 object obj = ResourceManager.GetObject("Re-enter your MPIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -753,7 +753,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Rectangle_2 {
+        public static System.Drawing.Bitmap Rectangle_2 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -763,7 +763,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Register_Form {
+        public static System.Drawing.Bitmap Register_Form {
             get {
                 object obj = ResourceManager.GetObject("Register Form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -773,7 +773,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_Account {
+        public static System.Drawing.Bitmap Settings_Account {
             get {
                 object obj = ResourceManager.GetObject("Settings_Account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -783,7 +783,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_Screen {
+        public static System.Drawing.Bitmap Settings_Screen {
             get {
                 object obj = ResourceManager.GetObject("Settings Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -793,7 +793,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_Screen__About_Us_ {
+        public static System.Drawing.Bitmap Settings_Screen__About_Us_ {
             get {
                 object obj = ResourceManager.GetObject("Settings Screen (About Us)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -803,7 +803,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_Screen__Backup_ {
+        public static System.Drawing.Bitmap Settings_Screen__Backup_ {
             get {
                 object obj = ResourceManager.GetObject("Settings Screen (Backup)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -813,7 +813,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_SCreen__Backup_MPIN_ {
+        public static System.Drawing.Bitmap Settings_SCreen__Backup_MPIN_ {
             get {
                 object obj = ResourceManager.GetObject("Settings SCreen (Backup-MPIN)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -823,7 +823,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Show_Icon {
+        public static System.Drawing.Bitmap Show_Icon {
             get {
                 object obj = ResourceManager.GetObject("Show Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -833,7 +833,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Trash__Delete_1 {
+        public static System.Drawing.Bitmap Trash__Delete_1 {
             get {
                 object obj = ResourceManager.GetObject("Trash  Delete 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -843,7 +843,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Type_Custom_Drop_Down {
+        public static System.Drawing.Bitmap Type_Custom_Drop_Down {
             get {
                 object obj = ResourceManager.GetObject("Type Custom Drop Down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -853,7 +853,7 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Type_Custom_Drop_Down1 {
+        public static System.Drawing.Bitmap Type_Custom_Drop_Down1 {
             get {
                 object obj = ResourceManager.GetObject("Type Custom Drop Down1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
