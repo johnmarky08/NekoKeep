@@ -37,8 +37,29 @@
             pnlCatChatBubble = new Panel();
             txtCatChat = new Label();
             pnlCatTrigger = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            panel2 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label11 = new Label();
+            label1 = new Label();
+            pnldelete = new Panel();
+            btndeletecancel = new Panel();
+            btndeleteok = new Panel();
+            btnlogoutok = new Panel();
+            panel4 = new Panel();
             ctxMain.SuspendLayout();
             pnlCatChatBubble.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
+            pnldelete.SuspendLayout();
             SuspendLayout();
             // 
             // btnMainContextMenu
@@ -91,6 +112,7 @@
             btnCtxMain_Profile.Size = new Size(192, 62);
             btnCtxMain_Profile.TabIndex = 0;
             btnCtxMain_Profile.Click += BtnCtxMain_Profile_Click;
+            btnCtxMain_Profile.Paint += btnCtxMain_Profile_Paint;
             // 
             // pnlCatChatBubble
             // 
@@ -123,6 +145,187 @@
             pnlCatTrigger.MouseEnter += PnlCatTrigger_MouseEnter;
             pnlCatTrigger.MouseLeave += PnlCatTrigger_MouseLeave;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Controls.Add(panel1);
+            flowLayoutPanel1.Location = new Point(161, 136);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1287, 695);
+            flowLayoutPanel1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pnldelete);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1270, 803);
+            panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = Properties.Resources.Add_Note_btn;
+            panel3.BackgroundImageLayout = ImageLayout.Center;
+            panel3.Location = new Point(22, 124);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(75, 31);
+            panel3.TabIndex = 20;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(891, 86);
+            label8.Name = "label8";
+            label8.Size = new Size(73, 28);
+            label8.TabIndex = 19;
+            label8.Text = "lbltags";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(660, 86);
+            label7.Name = "label7";
+            label7.Size = new Size(122, 28);
+            label7.TabIndex = 18;
+            label7.Text = "lblpassword";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(394, 86);
+            label6.Name = "label6";
+            label6.Size = new Size(92, 28);
+            label6.TabIndex = 17;
+            label6.Text = "lblEmails";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(21, 86);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 28);
+            label5.TabIndex = 16;
+            label5.Text = "lblName";
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.Actions_Line_1;
+            panel2.BackgroundImageLayout = ImageLayout.Center;
+            panel2.Location = new Point(1099, 48);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(164, 89);
+            panel2.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(1112, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(81, 28);
+            label4.TabIndex = 14;
+            label4.Text = "Actions";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(893, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(57, 28);
+            label3.TabIndex = 13;
+            label3.Text = "Tags";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(661, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 28);
+            label2.TabIndex = 12;
+            label2.Text = "Passwords";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(394, 17);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 28);
+            label11.TabIndex = 11;
+            label11.Text = "Emails";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(16, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Accounts";
+            // 
+            // pnldelete
+            // 
+            pnldelete.BackgroundImage = Properties.Resources.Delete_Section3;
+            pnldelete.BackgroundImageLayout = ImageLayout.Center;
+            pnldelete.Controls.Add(btndeletecancel);
+            pnldelete.Controls.Add(btndeleteok);
+            pnldelete.Location = new Point(386, 227);
+            pnldelete.Name = "pnldelete";
+            pnldelete.Size = new Size(556, 324);
+            pnldelete.TabIndex = 21;
+            pnldelete.Visible = false;
+            // 
+            // btndeletecancel
+            // 
+            btndeletecancel.Location = new Point(314, 223);
+            btndeletecancel.Name = "btndeletecancel";
+            btndeletecancel.Size = new Size(158, 51);
+            btndeletecancel.TabIndex = 1;
+            // 
+            // btndeleteok
+            // 
+            btndeleteok.Location = new Point(82, 223);
+            btndeleteok.Name = "btndeleteok";
+            btndeleteok.Size = new Size(158, 51);
+            btndeleteok.TabIndex = 0;
+            // 
+            // btnlogoutok
+            // 
+            btnlogoutok.Location = new Point(85, 200);
+            btnlogoutok.Name = "btnlogoutok";
+            btnlogoutok.Size = new Size(158, 51);
+            btnlogoutok.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImage = Properties.Resources._1;
+            panel4.BackgroundImageLayout = ImageLayout.Center;
+            panel4.Location = new Point(1149, 571);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(114, 100);
+            panel4.TabIndex = 22;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -130,6 +333,7 @@
             BackgroundImage = Properties.Resources.MAIN_UI_Screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1600, 941);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(pnlCatTrigger);
             Controls.Add(pnlCatChatBubble);
             Controls.Add(ctxMain);
@@ -144,6 +348,10 @@
             Load += FrmMain_Load;
             ctxMain.ResumeLayout(false);
             pnlCatChatBubble.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            pnldelete.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -162,5 +370,24 @@
         private Panel pnlCatChatBubble;
         private Label txtCatChat;
         private Panel pnlCatTrigger;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel1;
+        private Label label1;
+        private Panel panel2;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label11;
+        private Panel panel3;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Panel pnldelete;
+        private Panel btndeletecancel;
+        private Panel btndeleteok;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel btnlogoutok;
     }
 }

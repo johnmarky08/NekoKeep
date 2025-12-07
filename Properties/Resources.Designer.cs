@@ -63,6 +63,26 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _ {
+            get {
+                object obj = ResourceManager.GetObject("+", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("+1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap About_Us {
             get {
                 object obj = ResourceManager.GetObject("About Us", resourceCulture);
@@ -133,6 +153,36 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_Line_1 {
+            get {
+                object obj = ResourceManager.GetObject("Actions Line 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Actions_Line_2 {
+            get {
+                object obj = ResourceManager.GetObject("Actions Line 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_Note_btn {
+            get {
+                object obj = ResourceManager.GetObject("Add Note btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Backup {
             get {
                 object obj = ResourceManager.GetObject("Backup", resourceCulture);
@@ -146,6 +196,16 @@ namespace NekoKeep.Properties {
         internal static System.Drawing.Bitmap backup__selected_ {
             get {
                 object obj = ResourceManager.GetObject("backup (selected)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BG {
+            get {
+                object obj = ResourceManager.GetObject("BG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +233,69 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete_Section {
+            get {
+                object obj = ResourceManager.GetObject("Delete Section", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Section1 {
+            get {
+                object obj = ResourceManager.GetObject("Delete Section1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Section2 {
+            get {
+                object obj = ResourceManager.GetObject("Delete Section2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Section3 {
+            get {
+                object obj = ResourceManager.GetObject("Delete Section3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_Icon_1 {
+            get {
+                object obj = ResourceManager.GetObject("Edit Icon 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Enter_your_MPIN_Text {
             get {
                 object obj = ResourceManager.GetObject("Enter your MPIN Text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_7 {
+            get {
+                object obj = ResourceManager.GetObject("Group 7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +353,39 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logout {
+            get {
+                object obj = ResourceManager.GetObject("Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Main_Context_Menu {
             get {
                 object obj = ResourceManager.GetObject("Main Context Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen {
+            get {
+                object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_UI__Custom___Add_Account__Screen1 {
+            get {
+                object obj = ResourceManager.GetObject("Main UI (Custom - Add Account) Screen1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +676,16 @@ namespace NekoKeep.Properties {
         internal static System.Drawing.Bitmap Show_Icon {
             get {
                 object obj = ResourceManager.GetObject("Show Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash__Delete_1 {
+            get {
+                object obj = ResourceManager.GetObject("Trash  Delete 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

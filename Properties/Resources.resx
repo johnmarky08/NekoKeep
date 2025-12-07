@@ -118,11 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Main UI (Custom - Add Account) Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Main UI (Custom - Add Account) Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NekoKeep-Bluey Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NekoKeep-Bluey Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Profile Screen (Change Cat)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Profile Screen (Change Cat).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +157,14 @@
   <data name="Register Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="About Us" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\About Us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Actions Line 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions Line 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MPIN_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MPIN_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Trash  Delete 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash  Delete 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add Note btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add Note btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Show Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +178,15 @@
   <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Edit Icon 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit Icon 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Actions Line 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions Line 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="About Us" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\About Us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MPIN Blank (Backup)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Blank (Backup).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,6 +199,9 @@
   <data name="Cat Atelier Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cat Atelier Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Delete Section3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete Section3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MPIN Asterisk (Backup)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Asterisk (Backup).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +211,11 @@
   <data name="NekoKeep-Gray Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NekoKeep-Gray Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MPIN_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MPIN_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="+" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete Section1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete Section1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Settings Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +229,17 @@
   <data name="Settings_Account" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings_Account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MPIN_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MPIN_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cat Bubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cat Bubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="+1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\+1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Enter your MPIN Text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enter your MPIN Text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,11 +259,23 @@
   <data name="About us (selected)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\About us (selected).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hide Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hide Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete Section" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete Section.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cat Bubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cat Bubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MPIN_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MPIN_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hide Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hide Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete Section2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete Section2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Account (Change-Password) Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Account (Change-Password) Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,11 +283,17 @@
   <data name="NekoKeep-Orange Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NekoKeep-Orange Cat1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Main UI (Custom - Add Account) Screen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Main UI (Custom - Add Account) Screen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN Blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MPIN_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -258,5 +303,8 @@
   </data>
   <data name="Settings Screen (About Us)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings Screen (About Us).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Group 7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
