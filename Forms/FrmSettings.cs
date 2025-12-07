@@ -325,5 +325,11 @@ namespace NekoKeep.Forms
                 Utils.ThrowError("An error occurred while exporting the backup: " + ex.Message);
             }
         }
+
+        private void HandleKeyPress(object sender, KeyPressEventArgs e) =>
+            e.Handled = type != null
+                && type.Equals("mpin")
+                && ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    || (sender is TextBox tb && tb.Text.Length >= 6 && !char.IsControl(e.KeyChar)));
     }
 }

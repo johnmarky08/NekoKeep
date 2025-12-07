@@ -252,6 +252,7 @@
             txtSettingsChangeNew2.Name = "txtSettingsChangeNew2";
             txtSettingsChangeNew2.Size = new Size(366, 38);
             txtSettingsChangeNew2.TabIndex = 3;
+            txtSettingsChangeNew2.KeyPress += HandleKeyPress;
             // 
             // txtSettingsChangeNew
             // 
@@ -262,6 +263,7 @@
             txtSettingsChangeNew.Name = "txtSettingsChangeNew";
             txtSettingsChangeNew.Size = new Size(366, 38);
             txtSettingsChangeNew.TabIndex = 2;
+            txtSettingsChangeNew.KeyPress += HandleKeyPress;
             // 
             // txtSettingsChangeOld
             // 
@@ -272,6 +274,7 @@
             txtSettingsChangeOld.Name = "txtSettingsChangeOld";
             txtSettingsChangeOld.Size = new Size(366, 38);
             txtSettingsChangeOld.TabIndex = 1;
+            txtSettingsChangeOld.KeyPress += HandleKeyPress;
             // 
             // btnSettingsAccountSave
             // 
