@@ -269,7 +269,6 @@
             pnlRegisterMpinHolder.TabIndex = 1;
             pnlRegisterMpinHolder.TabStop = true;
             pnlRegisterMpinHolder.KeyDown += PnlRegisterMpinHolder_KeyDown;
-            pnlRegisterMpinHolder.PreviewKeyDown += PnlRegisterMpinHolder_PreviewKeyDown;
             // 
             // registerMpin_6
             // 
@@ -374,15 +373,16 @@
             // 
             // registerCatGif
             // 
-            registerCatGif.BackgroundImageLayout = ImageLayout.Center;
+            registerCatGif.BackgroundImageLayout = ImageLayout.Zoom;
             registerCatGif.Image = Properties.Resources.NekoKeep_Night_Cat1;
             registerCatGif.Location = new Point(604, 144);
             registerCatGif.Name = "registerCatGif";
             registerCatGif.Size = new Size(420, 673);
+            registerCatGif.SizeMode = PictureBoxSizeMode.Zoom;
             registerCatGif.TabIndex = 0;
             registerCatGif.TabStop = false;
             // 
-            // frmMain
+            // FrmOnboarding
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -393,7 +393,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             MaximizeBox = false;
-            Name = "frmMain";
+            Name = "FrmOnboarding";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NekoKeep";
             mainTabControl.ResumeLayout(false);

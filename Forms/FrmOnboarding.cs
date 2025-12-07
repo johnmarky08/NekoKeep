@@ -133,14 +133,6 @@ namespace NekoKeep.Forms
 
         private string mpin = "";
         private string mpin2 = "";
-        private void PnlRegisterMpinHolder_PreviewKeyDown(object? sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right ||
-                e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Tab)
-            {
-                e.IsInputKey = true;
-            }
-        }
 
         private void PnlRegisterMpinHolder_KeyDown(object? sender, KeyEventArgs e)
         {
