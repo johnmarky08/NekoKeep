@@ -81,9 +81,9 @@ namespace NekoKeep.Backend
 
             var payload = new
             {
-                service_id = "service_6bgqf2m",
-                template_id = "template_5ra2nx7",
-                user_id = "SLKTeOm1gd8r0z2DF",
+                service_id = "service_y3j890m",
+                template_id = "template_rhyy79c",
+                user_id = "wReHiWUtlbeZs0Rhh",
                 accessToken = Environment.GetEnvironmentVariable("EMAILJS_ACCESS_TOKEN"),
                 template_params = new
                 {
