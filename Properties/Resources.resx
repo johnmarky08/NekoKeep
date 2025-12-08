@@ -136,6 +136,9 @@
   <data name="Delete Section3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete Section3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Login - Forgot Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login - Forgot Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="import_btn_disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\import_btn_disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -253,6 +256,9 @@
   <data name="+" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Custom Type1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Custom Type1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -291,6 +297,9 @@
   </data>
   <data name="MPIN Filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN Filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OTP Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OTP Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backup (selected)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backup (selected).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,7 +364,7 @@
   <data name="Register Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login - Change Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login - Change Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

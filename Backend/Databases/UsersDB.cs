@@ -80,7 +80,7 @@ namespace NekoKeep.Backend.Databases
             return count > 0;
         }
 
-        // Updates user password both locally and in database
+        // Updates user password both locally and in database using user id
         public static void UpdateUserPassword(int userId, string password)
         {
             if (!Utils.ValidatePassword(password)) return;
@@ -95,6 +95,26 @@ namespace NekoKeep.Backend.Databases
             using var cmd = new MySqlCommand(sql, connection);
             cmd.Parameters.AddWithValue("@new_encrypted_password", newEncryptedPassword);
             cmd.Parameters.AddWithValue("@user_id", userId);
+            cmd.ExecuteNonQuery();
+
+            User.UpdateLocalPassword(newEncryptedPassword);
+        }
+        
+        // Updates user password both locally and in database using email
+        public static void UpdateUserPassword(string email, string password)
+        {
+            if (!Utils.ValidatePassword(password)) return;
+
+            string newEncryptedPassword = Utils.BCryptEncrypt(password);
+            string sql = @"
+                UPDATE Users
+                SET encrypted_password = @new_encrypted_password
+                WHERE email = @email;
+            ";
+
+            using var cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@new_encrypted_password", newEncryptedPassword);
+            cmd.Parameters.AddWithValue("@email", email);
             cmd.ExecuteNonQuery();
 
             User.UpdateLocalPassword(newEncryptedPassword);

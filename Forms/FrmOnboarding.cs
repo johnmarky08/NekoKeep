@@ -64,33 +64,23 @@ namespace NekoKeep.Forms
             ClearLoginFields();
         }
 
-        private void BtnLoginPassShow_Click(object sender, EventArgs e)
+        private static void ShowOrHidePassword(TextBox textBox, Panel panelButton)
         {
-            if (txtLoginPassword.UseSystemPasswordChar)
+            if (textBox.UseSystemPasswordChar)
             {
-                txtLoginPassword.UseSystemPasswordChar = false;
-                btnLoginPassShow.BackgroundImage = Properties.Resources.Hide_Icon;
+                textBox.UseSystemPasswordChar = false;
+                panelButton.BackgroundImage = Properties.Resources.Hide_Icon;
             }
             else
             {
-                txtLoginPassword.UseSystemPasswordChar = true;
-                btnLoginPassShow.BackgroundImage = Properties.Resources.Show_Icon;
+                textBox.UseSystemPasswordChar = true;
+                panelButton.BackgroundImage = Properties.Resources.Show_Icon;
             }
         }
 
-        private void BtnRegisterPassShow_Click(object sender, EventArgs e)
-        {
-            if (txtRegisterPassword.UseSystemPasswordChar)
-            {
-                txtRegisterPassword.UseSystemPasswordChar = false;
-                btnRegisterPassShow.BackgroundImage = Properties.Resources.Hide_Icon;
-            }
-            else
-            {
-                txtRegisterPassword.UseSystemPasswordChar = true;
-                btnRegisterPassShow.BackgroundImage = Properties.Resources.Show_Icon;
-            }
-        }
+        private void BtnLoginPassShow_Click(object sender, EventArgs e) => ShowOrHidePassword(txtLoginPassword, btnLoginPassShow);
+
+        private void BtnRegisterPassShow_Click(object sender, EventArgs e) => ShowOrHidePassword(txtRegisterPassword, btnRegisterPassShow);
 
         private void ClearRegisterFields()
         {
@@ -169,6 +159,10 @@ namespace NekoKeep.Forms
             if (mainTabControl.SelectedTab == tabRegisterMpinPage)
             {
                 pnlRegisterMpinHolder.Focus();
+            }
+            else if (mainTabControl.SelectedTab == tabLoginForgotPassOtp)
+            {
+                pnlLoginForgotPassOtpHolder.Focus();
             }
         }
 
@@ -264,6 +258,121 @@ namespace NekoKeep.Forms
             ClearRegisterFields();
             mainTabControl.SelectedTab = tabLoginPage;
         }
+
+        private void BtnLoginForgotPass_Click(object sender, EventArgs e)
+        {
+            mainTabControl.SelectedTab = tabLoginForgotPassEmail;
+            ClearLoginFields();
+        }
+
+        private void ClearOtpFields()
+        {
+            txtLoginForgotPassEmail.Clear();
+            otp = "";
+            UpdateOtpDisplay();
+            txtLoginChangePass1.Clear();
+            txtLoginChangePass2.Clear();
+            generatedOtp = null;
+        }
+
+        private void BtnLoginGoBack_Click(object sender, EventArgs e)
+        {
+            mainTabControl.SelectedTab = tabLoginPage;
+            ClearOtpFields();
+        }
+
+        private string otp = "";
+        private void PnlLoginForgotPassOtpHolder_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (otp.Length > 0)
+                    otp = otp[..^1];
+                e.Handled = true;
+            }
+            else if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                if (otp.Length < 6)
+                {
+                    char digit = (char)('0' + (e.KeyCode - Keys.D0));
+                    otp += digit;
+                }
+                e.Handled = true;
+            }
+            else if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                if (otp.Length < 6)
+                {
+                    char digit = (char)('0' + (e.KeyCode - Keys.NumPad0));
+                    otp += digit;
+                }
+                e.Handled = true;
+            }
+
+            UpdateOtpDisplay();
+        }
+
+        private void UpdateOtpDisplay()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                var results = tabLoginForgotPassOtp.Controls.Find("loginForgotPassOtp_" + i, true);
+                if (results.Length > 0 && results[0] is Panel panel)
+                {
+                    panel.BackgroundImage = i <= otp.Length
+                        ? Properties.Resources.ResourceManager.GetObject("MPIN_" + otp[i - 1]) as Bitmap
+                        : Properties.Resources.MPIN_Blank;
+
+                    panel.Invalidate();
+                    panel.Update();
+                }
+            }
+        }
+
+        private string? generatedOtp;
+        private async void BtnLoginForgotPassNext_Click(object sender, EventArgs e)
+        {
+            if (!Utils.ValidateEmail(txtLoginForgotPassEmail.Text)) Utils.ThrowError("Please enter a valid email address.");
+            else if (!UsersDB.CheckUserEmail(txtLoginForgotPassEmail.Text)) Utils.ThrowError("This email is not registered. Please check and try again.");
+            else
+            {
+                generatedOtp = await Utils.SendOtp(txtLoginForgotPassEmail.Text);
+                if (string.IsNullOrEmpty(generatedOtp)) return;
+
+                mainTabControl.SelectedTab = tabLoginForgotPassOtp;
+                return;
+            }
+
+            ClearOtpFields();
+        }
+
+        private void BtnLoginForgotPassLastNext_Click(object sender, EventArgs e)
+        {
+            if (!otp.Equals(generatedOtp))
+            {
+                Utils.ThrowError("The OTP you entered is incorrect. Please try again.");
+                otp = "";
+                UpdateOtpDisplay();
+            }
+            else mainTabControl.SelectedTab = tabLoginChangePass;
+        }
+
+        private void BtnLoginForgotPassChangePass_Click(object sender, EventArgs e)
+        {
+            if (!Utils.ValidatePassword(txtLoginChangePass1.Text)) Utils.ThrowError("Your password must be at least 8 characters and include uppercase and lowercase letters, a number, and a special character.");
+            else if (!txtLoginChangePass1.Text.Equals(txtLoginChangePass2.Text)) Utils.ThrowError("The password confirmation does not match.");
+            else
+            {
+                UsersDB.UpdateUserPassword(txtLoginForgotPassEmail.Text, txtLoginChangePass1.Text);
+                Utils.ThrowSuccess("Password reset successfully.");
+                ClearOtpFields();
+                mainTabControl.SelectedTab = tabLoginPage;
+            }
+        }
+
+        private void BtnLoginShowChangePass1_Click(object sender, EventArgs e) => ShowOrHidePassword(txtLoginChangePass1, btnLoginShowChangePass1);
+
+        private void BtnLoginShowChangePass2_Click(object sender, EventArgs e) => ShowOrHidePassword(txtLoginChangePass2, btnLoginShowChangePass2);
     }
 }
 

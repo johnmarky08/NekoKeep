@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOnboarding));
             mainTabControl = new TabControl();
             tabLoginPage = new TabPage();
+            btnLoginForgotPass = new Panel();
             btnLoginPassShow = new Panel();
             btnRedirectRegister = new Panel();
             btnLogin = new Panel();
@@ -58,6 +59,25 @@
             btnRegisterCatSelectionBackward = new Panel();
             btnRegisterCatSelectionForward = new Panel();
             registerCatGif = new PictureBox();
+            tabLoginForgotPassEmail = new TabPage();
+            btnLoginGoBack = new Panel();
+            btnLoginForgotPassNext = new Panel();
+            txtLoginForgotPassEmail = new TextBox();
+            tabLoginForgotPassOtp = new TabPage();
+            btnLoginForgotPassLastNext = new Panel();
+            pnlLoginForgotPassOtpHolder = new Panel();
+            loginForgotPassOtp_6 = new Panel();
+            loginForgotPassOtp_5 = new Panel();
+            loginForgotPassOtp_4 = new Panel();
+            loginForgotPassOtp_3 = new Panel();
+            loginForgotPassOtp_2 = new Panel();
+            loginForgotPassOtp_1 = new Panel();
+            tabLoginChangePass = new TabPage();
+            btnLoginShowChangePass2 = new Panel();
+            btnLoginShowChangePass1 = new Panel();
+            btnLoginForgotPassChangePass = new Panel();
+            txtLoginChangePass2 = new TextBox();
+            txtLoginChangePass1 = new TextBox();
             mainTabControl.SuspendLayout();
             tabLoginPage.SuspendLayout();
             tabRegisterPage.SuspendLayout();
@@ -65,6 +85,10 @@
             pnlRegisterMpinHolder.SuspendLayout();
             tabRegisterCatSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)registerCatGif).BeginInit();
+            tabLoginForgotPassEmail.SuspendLayout();
+            tabLoginForgotPassOtp.SuspendLayout();
+            pnlLoginForgotPassOtpHolder.SuspendLayout();
+            tabLoginChangePass.SuspendLayout();
             SuspendLayout();
             // 
             // mainTabControl
@@ -73,6 +97,9 @@
             mainTabControl.Controls.Add(tabRegisterPage);
             mainTabControl.Controls.Add(tabRegisterMpinPage);
             mainTabControl.Controls.Add(tabRegisterCatSelection);
+            mainTabControl.Controls.Add(tabLoginForgotPassEmail);
+            mainTabControl.Controls.Add(tabLoginForgotPassOtp);
+            mainTabControl.Controls.Add(tabLoginChangePass);
             mainTabControl.Location = new Point(-4, -24);
             mainTabControl.Name = "mainTabControl";
             mainTabControl.SelectedIndex = 0;
@@ -84,6 +111,7 @@
             // tabLoginPage
             // 
             tabLoginPage.BackgroundImage = Properties.Resources.Login_Form;
+            tabLoginPage.Controls.Add(btnLoginForgotPass);
             tabLoginPage.Controls.Add(btnLoginPassShow);
             tabLoginPage.Controls.Add(btnRedirectRegister);
             tabLoginPage.Controls.Add(btnLogin);
@@ -96,12 +124,21 @@
             tabLoginPage.Text = "tabLoginPage";
             tabLoginPage.UseVisualStyleBackColor = true;
             // 
+            // btnLoginForgotPass
+            // 
+            btnLoginForgotPass.Cursor = Cursors.Hand;
+            btnLoginForgotPass.Location = new Point(838, 728);
+            btnLoginForgotPass.Name = "btnLoginForgotPass";
+            btnLoginForgotPass.Size = new Size(172, 33);
+            btnLoginForgotPass.TabIndex = 6;
+            btnLoginForgotPass.Click += BtnLoginForgotPass_Click;
+            // 
             // btnLoginPassShow
             // 
             btnLoginPassShow.BackgroundImage = Properties.Resources.Show_Icon;
             btnLoginPassShow.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoginPassShow.Cursor = Cursors.Hand;
-            btnLoginPassShow.Location = new Point(958, 689);
+            btnLoginPassShow.Location = new Point(949, 662);
             btnLoginPassShow.Name = "btnLoginPassShow";
             btnLoginPassShow.Size = new Size(60, 60);
             btnLoginPassShow.TabIndex = 6;
@@ -110,7 +147,7 @@
             // btnRedirectRegister
             // 
             btnRedirectRegister.Cursor = Cursors.Hand;
-            btnRedirectRegister.Location = new Point(879, 813);
+            btnRedirectRegister.Location = new Point(870, 836);
             btnRedirectRegister.Name = "btnRedirectRegister";
             btnRedirectRegister.Size = new Size(73, 25);
             btnRedirectRegister.TabIndex = 5;
@@ -119,7 +156,7 @@
             // btnLogin
             // 
             btnLogin.Cursor = Cursors.Hand;
-            btnLogin.Location = new Point(760, 764);
+            btnLogin.Location = new Point(750, 782);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(99, 42);
             btnLogin.TabIndex = 4;
@@ -129,7 +166,7 @@
             // 
             txtLoginPassword.BorderStyle = BorderStyle.None;
             txtLoginPassword.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLoginPassword.Location = new Point(600, 704);
+            txtLoginPassword.Location = new Point(591, 677);
             txtLoginPassword.Name = "txtLoginPassword";
             txtLoginPassword.PlaceholderText = "Password";
             txtLoginPassword.Size = new Size(361, 28);
@@ -140,7 +177,7 @@
             // 
             txtLoginEmail.BorderStyle = BorderStyle.None;
             txtLoginEmail.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLoginEmail.Location = new Point(600, 634);
+            txtLoginEmail.Location = new Point(591, 606);
             txtLoginEmail.Name = "txtLoginEmail";
             txtLoginEmail.PlaceholderText = "Email";
             txtLoginEmail.Size = new Size(400, 28);
@@ -382,6 +419,212 @@
             registerCatGif.TabIndex = 0;
             registerCatGif.TabStop = false;
             // 
+            // tabLoginForgotPassEmail
+            // 
+            tabLoginForgotPassEmail.BackgroundImage = Properties.Resources.Login___Forgot_Pass;
+            tabLoginForgotPassEmail.Controls.Add(btnLoginGoBack);
+            tabLoginForgotPassEmail.Controls.Add(btnLoginForgotPassNext);
+            tabLoginForgotPassEmail.Controls.Add(txtLoginForgotPassEmail);
+            tabLoginForgotPassEmail.Location = new Point(4, 24);
+            tabLoginForgotPassEmail.Name = "tabLoginForgotPassEmail";
+            tabLoginForgotPassEmail.Size = new Size(1600, 940);
+            tabLoginForgotPassEmail.TabIndex = 4;
+            tabLoginForgotPassEmail.Text = "Login - Forgot Pass";
+            tabLoginForgotPassEmail.UseVisualStyleBackColor = true;
+            // 
+            // btnLoginGoBack
+            // 
+            btnLoginGoBack.Cursor = Cursors.Hand;
+            btnLoginGoBack.Location = new Point(764, 784);
+            btnLoginGoBack.Name = "btnLoginGoBack";
+            btnLoginGoBack.Size = new Size(80, 21);
+            btnLoginGoBack.TabIndex = 2;
+            btnLoginGoBack.Click += BtnLoginGoBack_Click;
+            // 
+            // btnLoginForgotPassNext
+            // 
+            btnLoginForgotPassNext.Cursor = Cursors.Hand;
+            btnLoginForgotPassNext.Location = new Point(745, 730);
+            btnLoginForgotPassNext.Name = "btnLoginForgotPassNext";
+            btnLoginForgotPassNext.Size = new Size(115, 36);
+            btnLoginForgotPassNext.TabIndex = 1;
+            btnLoginForgotPassNext.Click += BtnLoginForgotPassNext_Click;
+            // 
+            // txtLoginForgotPassEmail
+            // 
+            txtLoginForgotPassEmail.BorderStyle = BorderStyle.None;
+            txtLoginForgotPassEmail.Font = new Font("Comic Sans MS", 15F);
+            txtLoginForgotPassEmail.Location = new Point(589, 661);
+            txtLoginForgotPassEmail.Name = "txtLoginForgotPassEmail";
+            txtLoginForgotPassEmail.PlaceholderText = "Email";
+            txtLoginForgotPassEmail.Size = new Size(403, 28);
+            txtLoginForgotPassEmail.TabIndex = 0;
+            // 
+            // tabLoginForgotPassOtp
+            // 
+            tabLoginForgotPassOtp.BackgroundImage = Properties.Resources.OTP_Screen;
+            tabLoginForgotPassOtp.BackgroundImageLayout = ImageLayout.Center;
+            tabLoginForgotPassOtp.Controls.Add(btnLoginForgotPassLastNext);
+            tabLoginForgotPassOtp.Controls.Add(pnlLoginForgotPassOtpHolder);
+            tabLoginForgotPassOtp.Location = new Point(4, 24);
+            tabLoginForgotPassOtp.Name = "tabLoginForgotPassOtp";
+            tabLoginForgotPassOtp.Size = new Size(1600, 940);
+            tabLoginForgotPassOtp.TabIndex = 5;
+            tabLoginForgotPassOtp.Text = "tabLoginForgotPassMpin";
+            tabLoginForgotPassOtp.UseVisualStyleBackColor = true;
+            // 
+            // btnLoginForgotPassLastNext
+            // 
+            btnLoginForgotPassLastNext.Cursor = Cursors.Hand;
+            btnLoginForgotPassLastNext.Location = new Point(719, 653);
+            btnLoginForgotPassLastNext.Name = "btnLoginForgotPassLastNext";
+            btnLoginForgotPassLastNext.Size = new Size(158, 49);
+            btnLoginForgotPassLastNext.TabIndex = 2;
+            btnLoginForgotPassLastNext.Click += BtnLoginForgotPassLastNext_Click;
+            // 
+            // pnlLoginForgotPassOtpHolder
+            // 
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_6);
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_5);
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_4);
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_3);
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_2);
+            pnlLoginForgotPassOtpHolder.Controls.Add(loginForgotPassOtp_1);
+            pnlLoginForgotPassOtpHolder.Location = new Point(258, 326);
+            pnlLoginForgotPassOtpHolder.Name = "pnlLoginForgotPassOtpHolder";
+            pnlLoginForgotPassOtpHolder.Size = new Size(1081, 236);
+            pnlLoginForgotPassOtpHolder.TabIndex = 1;
+            pnlLoginForgotPassOtpHolder.TabStop = true;
+            pnlLoginForgotPassOtpHolder.KeyDown += PnlLoginForgotPassOtpHolder_KeyDown;
+            // 
+            // loginForgotPassOtp_6
+            // 
+            loginForgotPassOtp_6.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_6.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_6.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_6.Location = new Point(904, 54);
+            loginForgotPassOtp_6.Name = "loginForgotPassOtp_6";
+            loginForgotPassOtp_6.Size = new Size(146, 143);
+            loginForgotPassOtp_6.TabIndex = 3;
+            // 
+            // loginForgotPassOtp_5
+            // 
+            loginForgotPassOtp_5.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_5.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_5.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_5.Location = new Point(730, 54);
+            loginForgotPassOtp_5.Name = "loginForgotPassOtp_5";
+            loginForgotPassOtp_5.Size = new Size(146, 143);
+            loginForgotPassOtp_5.TabIndex = 3;
+            // 
+            // loginForgotPassOtp_4
+            // 
+            loginForgotPassOtp_4.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_4.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_4.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_4.Location = new Point(556, 54);
+            loginForgotPassOtp_4.Name = "loginForgotPassOtp_4";
+            loginForgotPassOtp_4.Size = new Size(146, 143);
+            loginForgotPassOtp_4.TabIndex = 3;
+            // 
+            // loginForgotPassOtp_3
+            // 
+            loginForgotPassOtp_3.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_3.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_3.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_3.Location = new Point(382, 54);
+            loginForgotPassOtp_3.Name = "loginForgotPassOtp_3";
+            loginForgotPassOtp_3.Size = new Size(146, 143);
+            loginForgotPassOtp_3.TabIndex = 2;
+            // 
+            // loginForgotPassOtp_2
+            // 
+            loginForgotPassOtp_2.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_2.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_2.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_2.Location = new Point(208, 54);
+            loginForgotPassOtp_2.Name = "loginForgotPassOtp_2";
+            loginForgotPassOtp_2.Size = new Size(146, 143);
+            loginForgotPassOtp_2.TabIndex = 1;
+            // 
+            // loginForgotPassOtp_1
+            // 
+            loginForgotPassOtp_1.BackgroundImage = Properties.Resources.MPIN_Blank;
+            loginForgotPassOtp_1.BackgroundImageLayout = ImageLayout.Center;
+            loginForgotPassOtp_1.Cursor = Cursors.IBeam;
+            loginForgotPassOtp_1.Location = new Point(34, 54);
+            loginForgotPassOtp_1.Name = "loginForgotPassOtp_1";
+            loginForgotPassOtp_1.Size = new Size(146, 143);
+            loginForgotPassOtp_1.TabIndex = 0;
+            // 
+            // tabLoginChangePass
+            // 
+            tabLoginChangePass.BackgroundImage = Properties.Resources.Login___Change_Pass;
+            tabLoginChangePass.Controls.Add(btnLoginShowChangePass2);
+            tabLoginChangePass.Controls.Add(btnLoginShowChangePass1);
+            tabLoginChangePass.Controls.Add(btnLoginForgotPassChangePass);
+            tabLoginChangePass.Controls.Add(txtLoginChangePass2);
+            tabLoginChangePass.Controls.Add(txtLoginChangePass1);
+            tabLoginChangePass.Location = new Point(4, 24);
+            tabLoginChangePass.Name = "tabLoginChangePass";
+            tabLoginChangePass.Size = new Size(1600, 940);
+            tabLoginChangePass.TabIndex = 6;
+            tabLoginChangePass.Text = "tabLoginChangePass";
+            tabLoginChangePass.UseVisualStyleBackColor = true;
+            // 
+            // btnLoginShowChangePass2
+            // 
+            btnLoginShowChangePass2.BackgroundImage = Properties.Resources.Show_Icon;
+            btnLoginShowChangePass2.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLoginShowChangePass2.Cursor = Cursors.Hand;
+            btnLoginShowChangePass2.Location = new Point(956, 610);
+            btnLoginShowChangePass2.Name = "btnLoginShowChangePass2";
+            btnLoginShowChangePass2.Size = new Size(60, 60);
+            btnLoginShowChangePass2.TabIndex = 4;
+            btnLoginShowChangePass2.Click += BtnLoginShowChangePass2_Click;
+            // 
+            // btnLoginShowChangePass1
+            // 
+            btnLoginShowChangePass1.BackgroundImage = Properties.Resources.Show_Icon;
+            btnLoginShowChangePass1.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLoginShowChangePass1.Cursor = Cursors.Hand;
+            btnLoginShowChangePass1.Location = new Point(958, 526);
+            btnLoginShowChangePass1.Name = "btnLoginShowChangePass1";
+            btnLoginShowChangePass1.Size = new Size(60, 60);
+            btnLoginShowChangePass1.TabIndex = 3;
+            btnLoginShowChangePass1.Click += BtnLoginShowChangePass1_Click;
+            // 
+            // btnLoginForgotPassChangePass
+            // 
+            btnLoginForgotPassChangePass.Cursor = Cursors.Hand;
+            btnLoginForgotPassChangePass.Location = new Point(742, 716);
+            btnLoginForgotPassChangePass.Name = "btnLoginForgotPassChangePass";
+            btnLoginForgotPassChangePass.Size = new Size(113, 36);
+            btnLoginForgotPassChangePass.TabIndex = 2;
+            btnLoginForgotPassChangePass.Click += BtnLoginForgotPassChangePass_Click;
+            // 
+            // txtLoginChangePass2
+            // 
+            txtLoginChangePass2.BorderStyle = BorderStyle.None;
+            txtLoginChangePass2.Font = new Font("Comic Sans MS", 15F);
+            txtLoginChangePass2.Location = new Point(598, 626);
+            txtLoginChangePass2.Name = "txtLoginChangePass2";
+            txtLoginChangePass2.PlaceholderText = "Confirm Password";
+            txtLoginChangePass2.Size = new Size(364, 28);
+            txtLoginChangePass2.TabIndex = 1;
+            txtLoginChangePass2.UseSystemPasswordChar = true;
+            // 
+            // txtLoginChangePass1
+            // 
+            txtLoginChangePass1.BorderStyle = BorderStyle.None;
+            txtLoginChangePass1.Font = new Font("Comic Sans MS", 15F);
+            txtLoginChangePass1.Location = new Point(598, 541);
+            txtLoginChangePass1.Name = "txtLoginChangePass1";
+            txtLoginChangePass1.PlaceholderText = "Password";
+            txtLoginChangePass1.Size = new Size(364, 28);
+            txtLoginChangePass1.TabIndex = 0;
+            txtLoginChangePass1.UseSystemPasswordChar = true;
+            // 
             // FrmOnboarding
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -405,6 +648,12 @@
             pnlRegisterMpinHolder.ResumeLayout(false);
             tabRegisterCatSelection.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)registerCatGif).EndInit();
+            tabLoginForgotPassEmail.ResumeLayout(false);
+            tabLoginForgotPassEmail.PerformLayout();
+            tabLoginForgotPassOtp.ResumeLayout(false);
+            pnlLoginForgotPassOtpHolder.ResumeLayout(false);
+            tabLoginChangePass.ResumeLayout(false);
+            tabLoginChangePass.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -439,5 +688,25 @@
         protected Panel btnLogin;
         protected Panel btnLoginPassShow;
         protected Panel btnRegisterPassShow;
+        protected Panel btnLoginForgotPass;
+        protected Panel pnlLoginForgotPassOtpHolder;
+        protected Panel loginForgotPassOtp_1;
+        protected Panel loginForgotPassOtp_6;
+        protected Panel loginForgotPassOtp_5;
+        protected Panel loginForgotPassOtp_4;
+        protected Panel loginForgotPassOtp_3;
+        protected Panel loginForgotPassOtp_2;
+        private TabPage tabLoginForgotPassEmail;
+        private TextBox txtLoginForgotPassEmail;
+        private Panel btnLoginGoBack;
+        private Panel btnLoginForgotPassNext;
+        private TabPage tabLoginForgotPassOtp;
+        private Panel btnLoginForgotPassLastNext;
+        private TabPage tabLoginChangePass;
+        private TextBox txtLoginChangePass1;
+        private Panel btnLoginForgotPassChangePass;
+        private TextBox txtLoginChangePass2;
+        private Panel btnLoginShowChangePass1;
+        private Panel btnLoginShowChangePass2;
     }
 }

@@ -483,6 +483,26 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Login___Change_Pass {
+            get {
+                object obj = ResourceManager.GetObject("Login - Change Pass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Login___Forgot_Pass {
+            get {
+                object obj = ResourceManager.GetObject("Login - Forgot Pass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Login_Form {
             get {
                 object obj = ResourceManager.GetObject("Login Form", resourceCulture);
@@ -726,6 +746,16 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap NekoKeep_Orange_Cat1 {
             get {
                 object obj = ResourceManager.GetObject("NekoKeep-Orange Cat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap OTP_Screen {
+            get {
+                object obj = ResourceManager.GetObject("OTP Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
