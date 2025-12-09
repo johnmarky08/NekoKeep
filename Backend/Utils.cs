@@ -1,5 +1,7 @@
 ﻿using NekoKeep.Backend.Classes;
 using System.Net.Mail;
+using System.Text;
+using System.Text.Json;
 
 namespace NekoKeep.Backend
 {
@@ -60,19 +62,50 @@ namespace NekoKeep.Backend
                 && password.Any(ch => !char.IsLetterOrDigit(ch));
         }
 
-        public static bool ValidateMpin(string mpin)
-        {
-            return !string.IsNullOrEmpty(mpin) && mpin.Length == 6 && int.TryParse(mpin, out _);
-        }
+        public static bool ValidateMpin(string mpin) => !string.IsNullOrEmpty(mpin) && mpin.Length == 6 && int.TryParse(mpin, out _);
 
-        public static void ThrowError(string message)
-        {
-            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        public static void ThrowError(string message) => MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        public static void ThrowSuccess(string message)
+        public static void ThrowSuccess(string message) => MessageBox.Show(message, "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        public async static Task<string?> SendOtp(string email)
         {
-            MessageBox.Show(message, "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string otp = "";
+            Random rand = new();
+            for (int i = 0; i < 6; i++)
+            {
+                otp += rand.Next(0, 10).ToString();
+            }
+
+            var url = "https://api.emailjs.com/api/v1.0/email/send";
+
+            var payload = new
+            {
+                service_id = "service_y3j890m",
+                template_id = "template_rhyy79c",
+                user_id = "wReHiWUtlbeZs0Rhh",
+                accessToken = Environment.GetEnvironmentVariable("EMAILJS_ACCESS_TOKEN"),
+                template_params = new
+                {
+                    to_email = email,
+                    otp
+                }
+            };
+
+            var json = JsonSerializer.Serialize(payload);
+            using var client = new HttpClient();
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using var response = await client.PostAsync(url, content);
+            var result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ThrowError("EmailJS error: " + result);
+                return null;
+            }
+
+            return otp;
         }
     }
 }
