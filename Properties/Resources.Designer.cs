@@ -273,6 +273,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Button_Name {
+            get {
+                object obj = ResourceManager.GetObject("Button Name", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Cat_Atelier_Form {
             get {
                 object obj = ResourceManager.GetObject("Cat Atelier Form", resourceCulture);
@@ -386,6 +396,16 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap Enter_your_MPIN_Text {
             get {
                 object obj = ResourceManager.GetObject("Enter your MPIN Text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Page {
+            get {
+                object obj = ResourceManager.GetObject("Filter Page", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

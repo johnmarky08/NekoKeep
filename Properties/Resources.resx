@@ -223,6 +223,9 @@
   <data name="Group 18 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 18 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Filter Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Filter Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MPIN_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MPIN_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -252,6 +255,9 @@
   </data>
   <data name="+" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Custom Type1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Custom Type1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,7 +361,7 @@
   <data name="Register Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Re-enter your MPIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Re-enter your MPIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button Name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -50,6 +50,7 @@
             panel4 = new Panel();
             btnAddAccount = new Panel();
             btnlogoutok = new Panel();
+            panel3 = new Panel();
             ctxMain.SuspendLayout();
             pnlCatChatBubble.SuspendLayout();
             flowLayoutPanelAccounts.SuspendLayout();
@@ -154,6 +155,7 @@
             // panel1
             // 
             panel1.AutoScroll = true;
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -277,6 +279,14 @@
             btnlogoutok.Size = new Size(158, 51);
             btnlogoutok.TabIndex = 0;
             // 
+            // panel3
+            // 
+            panel3.BackgroundImageLayout = ImageLayout.Center;
+            panel3.Location = new Point(750, 108);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 100);
+            panel3.TabIndex = 22;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,5 +348,6 @@
         private Panel panel5;
         private Panel btnlogoutok;
         private Panel btnAddAccount;
+        private Panel panel3;
     }
 }

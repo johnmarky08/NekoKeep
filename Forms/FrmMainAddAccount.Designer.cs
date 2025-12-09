@@ -68,6 +68,7 @@
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = Properties.Resources.Add_Account_Section2;
             panel2.BackgroundImageLayout = ImageLayout.Center;
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(panel6);
@@ -243,7 +244,7 @@
             panel5.Controls.Add(btnAdd);
             panel5.Controls.Add(textBox1);
             panel5.Controls.Add(label5);
-            panel5.Location = new Point(21, 510);
+            panel5.Location = new Point(285, 249);
             panel5.Name = "panel5";
             panel5.Size = new Size(576, 335);
             panel5.TabIndex = 8;
@@ -287,7 +288,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Main_UI__Custom___Add_Account__Screen1;
             ClientSize = new Size(1584, 941);
-            Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FrmMainAddAccount";
