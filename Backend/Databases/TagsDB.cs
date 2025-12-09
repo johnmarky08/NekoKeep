@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using NekoKeep.Backend.Classes;
 using NekoKeep.Backend.Interfaces;
 
 namespace NekoKeep.Backend.Databases
@@ -104,6 +105,33 @@ namespace NekoKeep.Backend.Databases
             using var cmd = new MySqlCommand(sql, connection);
             cmd.Parameters.AddWithValue("@tag_id", tagId);
             cmd.ExecuteNonQuery();
+        }
+
+        // Resolve tag with tag names
+        public static List<ITag> ResolveTags(List<string> tagNames)
+        {
+            int userId = User.Session!.Id;
+            var tags = new List<ITag>();
+            List<ITag> currentTags = TagsDB.RetrieveTags(userId);
+
+            foreach (var name in tagNames)
+            {
+                if (string.IsNullOrWhiteSpace(name)) continue;
+                ITag? existingTag = currentTags.FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+                if (existingTag != null)
+                {
+                    tags.Add(existingTag);
+                }
+                else
+                {
+                    TagsDB.CreateTag(userId, name);
+                    ITag newTag = TagsDB.RetrieveTags(userId).FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase))!;
+                    tags.Add(newTag);
+                }
+            }
+
+            return tags;
         }
     }
 }

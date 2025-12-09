@@ -99,7 +99,7 @@ namespace NekoKeep.Backend
                          .Where(t => t.Length > 0)
                          .ToList();
 
-                List<ITag> tags = ResolveTags(tagNames);
+                List<ITag> tags = TagsDB.ResolveTags(tagNames);
 
                 try
                 {
@@ -139,32 +139,6 @@ namespace NekoKeep.Backend
                     Utils.ThrowError($"Failed to import row {r}: {ex.Message}");
                 }
             }
-        }
-
-        private static List<ITag> ResolveTags(List<string> tagNames)
-        {
-            int userId = User.Session!.Id;
-            var tags = new List<ITag>();
-            List<ITag> currentTags = TagsDB.RetrieveTags(userId);
-
-            foreach (var name in tagNames)
-            {
-                if (string.IsNullOrWhiteSpace(name)) continue;
-                ITag? existingTag = currentTags.FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase));
-
-                if (existingTag != null)
-                {
-                    tags.Add(existingTag);
-                }
-                else
-                {
-                    TagsDB.CreateTag(userId, name);
-                    ITag newTag = TagsDB.RetrieveTags(userId).FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase))!;
-                    tags.Add(newTag);
-                }
-            }
-
-            return tags;
         }
     }
 }

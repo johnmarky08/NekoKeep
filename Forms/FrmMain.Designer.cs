@@ -31,32 +31,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             btnMainContextMenu = new Panel();
             ctxMain = new Panel();
-            btnCtxMain_Settings = new Panel();
             btnCtxMain_Logout = new Panel();
+            btnCtxMain_Settings = new Panel();
             btnCtxMain_Profile = new Panel();
             pnlCatChatBubble = new Panel();
             txtCatChat = new Label();
             pnlCatTrigger = new Panel();
             flowLayoutPanelAccounts = new FlowLayoutPanel();
-            panel1 = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label11 = new Label();
-            label1 = new Label();
-            pnldelete = new Panel();
-            btndeletecancel = new Panel();
-            btndeleteok = new Panel();
-            panel4 = new Panel();
+            pnlAccounts = new Panel();
+            pnlLogout = new Panel();
+            btnLogoutCancel = new Panel();
+            btnLogoutConfirm = new Panel();
+            lblActions = new Label();
+            lblTags = new Label();
+            lblPass = new Label();
+            lblEmails = new Label();
+            lblAccounts = new Label();
+            pnlDelete = new Panel();
+            btnDeleteCancel = new Panel();
+            btnDeleteOk = new Panel();
+            pnlAddAccHolder = new Panel();
             btnAddAccount = new Panel();
-            btnlogoutok = new Panel();
-            panel3 = new Panel();
             ctxMain.SuspendLayout();
             pnlCatChatBubble.SuspendLayout();
             flowLayoutPanelAccounts.SuspendLayout();
-            panel1.SuspendLayout();
-            pnldelete.SuspendLayout();
-            panel4.SuspendLayout();
+            pnlAccounts.SuspendLayout();
+            pnlLogout.SuspendLayout();
+            pnlDelete.SuspendLayout();
+            pnlAddAccHolder.SuspendLayout();
             SuspendLayout();
             // 
             // btnMainContextMenu
@@ -75,14 +77,23 @@
             ctxMain.BackColor = Color.Transparent;
             ctxMain.BackgroundImage = Properties.Resources.Main_Context_Menu;
             ctxMain.BackgroundImageLayout = ImageLayout.Center;
-            ctxMain.Controls.Add(btnCtxMain_Settings);
             ctxMain.Controls.Add(btnCtxMain_Logout);
+            ctxMain.Controls.Add(btnCtxMain_Settings);
             ctxMain.Controls.Add(btnCtxMain_Profile);
             ctxMain.Location = new Point(1309, 114);
             ctxMain.Name = "ctxMain";
             ctxMain.Size = new Size(192, 184);
             ctxMain.TabIndex = 1;
             ctxMain.Visible = false;
+            // 
+            // btnCtxMain_Logout
+            // 
+            btnCtxMain_Logout.Cursor = Cursors.Hand;
+            btnCtxMain_Logout.Location = new Point(0, 122);
+            btnCtxMain_Logout.Name = "btnCtxMain_Logout";
+            btnCtxMain_Logout.Size = new Size(192, 62);
+            btnCtxMain_Logout.TabIndex = 1;
+            btnCtxMain_Logout.Click += BtnCtxMain_Logout_Click;
             // 
             // btnCtxMain_Settings
             // 
@@ -93,14 +104,6 @@
             btnCtxMain_Settings.TabIndex = 2;
             btnCtxMain_Settings.Click += BtnCtxMain_Settings_Click;
             // 
-            // btnCtxMain_Logout
-            // 
-            btnCtxMain_Logout.Cursor = Cursors.Hand;
-            btnCtxMain_Logout.Location = new Point(0, 122);
-            btnCtxMain_Logout.Name = "btnCtxMain_Logout";
-            btnCtxMain_Logout.Size = new Size(192, 62);
-            btnCtxMain_Logout.TabIndex = 1;
-            // 
             // btnCtxMain_Profile
             // 
             btnCtxMain_Profile.Cursor = Cursors.Hand;
@@ -109,7 +112,6 @@
             btnCtxMain_Profile.Size = new Size(192, 62);
             btnCtxMain_Profile.TabIndex = 0;
             btnCtxMain_Profile.Click += BtnCtxMain_Profile_Click;
-            btnCtxMain_Profile.Paint += btnCtxMain_Profile_Paint;
             // 
             // pnlCatChatBubble
             // 
@@ -146,121 +148,148 @@
             // 
             flowLayoutPanelAccounts.AutoScroll = true;
             flowLayoutPanelAccounts.BackColor = Color.Transparent;
-            flowLayoutPanelAccounts.Controls.Add(panel1);
+            flowLayoutPanelAccounts.Controls.Add(pnlAccounts);
             flowLayoutPanelAccounts.Location = new Point(161, 136);
             flowLayoutPanelAccounts.Name = "flowLayoutPanelAccounts";
             flowLayoutPanelAccounts.Size = new Size(1287, 648);
             flowLayoutPanelAccounts.TabIndex = 4;
             // 
-            // panel1
+            // pnlAccounts
             // 
-            panel1.AutoScroll = true;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pnldelete);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1266, 628);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint_1;
+            pnlAccounts.AutoScroll = true;
+            pnlAccounts.Controls.Add(pnlLogout);
+            pnlAccounts.Controls.Add(lblActions);
+            pnlAccounts.Controls.Add(lblTags);
+            pnlAccounts.Controls.Add(lblPass);
+            pnlAccounts.Controls.Add(lblEmails);
+            pnlAccounts.Controls.Add(lblAccounts);
+            pnlAccounts.Controls.Add(pnlDelete);
+            pnlAccounts.Location = new Point(3, 3);
+            pnlAccounts.Name = "pnlAccounts";
+            pnlAccounts.Size = new Size(1266, 628);
+            pnlAccounts.TabIndex = 0;
             // 
-            // label4
+            // pnlLogout
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(1130, 17);
-            label4.Name = "label4";
-            label4.Size = new Size(81, 28);
-            label4.TabIndex = 14;
-            label4.Text = "Actions";
-            label4.Visible = false;
+            pnlLogout.BackgroundImage = Properties.Resources.Logout_Section;
+            pnlLogout.BackgroundImageLayout = ImageLayout.Center;
+            pnlLogout.Controls.Add(btnLogoutCancel);
+            pnlLogout.Controls.Add(btnLogoutConfirm);
+            pnlLogout.Location = new Point(386, 257);
+            pnlLogout.Name = "pnlLogout";
+            pnlLogout.Size = new Size(556, 257);
+            pnlLogout.TabIndex = 22;
+            pnlLogout.Visible = false;
             // 
-            // label3
+            // btnLogoutCancel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(893, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 28);
-            label3.TabIndex = 13;
-            label3.Text = "Tags";
-            label3.Visible = false;
+            btnLogoutCancel.Cursor = Cursors.Hand;
+            btnLogoutCancel.Location = new Point(325, 177);
+            btnLogoutCancel.Name = "btnLogoutCancel";
+            btnLogoutCancel.Size = new Size(157, 42);
+            btnLogoutCancel.TabIndex = 1;
+            btnLogoutCancel.Click += BtnLogoutCancel_Click;
             // 
-            // label2
+            // btnLogoutConfirm
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(661, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(109, 28);
-            label2.TabIndex = 12;
-            label2.Text = "Passwords";
-            label2.Visible = false;
+            btnLogoutConfirm.Cursor = Cursors.Hand;
+            btnLogoutConfirm.Location = new Point(73, 177);
+            btnLogoutConfirm.Name = "btnLogoutConfirm";
+            btnLogoutConfirm.Size = new Size(155, 42);
+            btnLogoutConfirm.TabIndex = 0;
+            btnLogoutConfirm.Click += BtnLogoutConfirm_Click;
             // 
-            // label11
+            // lblActions
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(394, 17);
-            label11.Name = "label11";
-            label11.Size = new Size(70, 28);
-            label11.TabIndex = 11;
-            label11.Text = "Emails";
-            label11.Visible = false;
+            lblActions.AutoSize = true;
+            lblActions.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActions.Location = new Point(1130, 17);
+            lblActions.Name = "lblActions";
+            lblActions.Size = new Size(81, 28);
+            lblActions.TabIndex = 14;
+            lblActions.Text = "Actions";
+            lblActions.Visible = false;
             // 
-            // label1
+            // lblTags
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(16, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(95, 28);
-            label1.TabIndex = 0;
-            label1.Text = "Accounts";
-            label1.Visible = false;
+            lblTags.AutoSize = true;
+            lblTags.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTags.Location = new Point(893, 17);
+            lblTags.Name = "lblTags";
+            lblTags.Size = new Size(57, 28);
+            lblTags.TabIndex = 13;
+            lblTags.Text = "Tags";
+            lblTags.Visible = false;
             // 
-            // pnldelete
+            // lblPass
             // 
-            pnldelete.BackgroundImage = Properties.Resources.Delete_Section3;
-            pnldelete.BackgroundImageLayout = ImageLayout.Center;
-            pnldelete.Controls.Add(btndeletecancel);
-            pnldelete.Controls.Add(btndeleteok);
-            pnldelete.Location = new Point(386, 227);
-            pnldelete.Name = "pnldelete";
-            pnldelete.Size = new Size(556, 324);
-            pnldelete.TabIndex = 21;
-            pnldelete.Visible = false;
-            pnldelete.Paint += pnldelete_Paint;
+            lblPass.AutoSize = true;
+            lblPass.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPass.Location = new Point(661, 17);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(109, 28);
+            lblPass.TabIndex = 12;
+            lblPass.Text = "Passwords";
+            lblPass.Visible = false;
             // 
-            // btndeletecancel
+            // lblEmails
             // 
-            btndeletecancel.Location = new Point(314, 223);
-            btndeletecancel.Name = "btndeletecancel";
-            btndeletecancel.Size = new Size(158, 51);
-            btndeletecancel.TabIndex = 1;
+            lblEmails.AutoSize = true;
+            lblEmails.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmails.Location = new Point(394, 17);
+            lblEmails.Name = "lblEmails";
+            lblEmails.Size = new Size(70, 28);
+            lblEmails.TabIndex = 11;
+            lblEmails.Text = "Emails";
+            lblEmails.Visible = false;
             // 
-            // btndeleteok
+            // lblAccounts
             // 
-            btndeleteok.Location = new Point(82, 223);
-            btndeleteok.Name = "btndeleteok";
-            btndeleteok.Size = new Size(158, 51);
-            btndeleteok.TabIndex = 0;
+            lblAccounts.AutoSize = true;
+            lblAccounts.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAccounts.Location = new Point(16, 17);
+            lblAccounts.Name = "lblAccounts";
+            lblAccounts.Size = new Size(95, 28);
+            lblAccounts.TabIndex = 0;
+            lblAccounts.Text = "Accounts";
+            lblAccounts.Visible = false;
             // 
-            // panel4
+            // pnlDelete
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources._1;
-            panel4.BackgroundImageLayout = ImageLayout.Center;
-            panel4.Controls.Add(btnAddAccount);
-            panel4.Location = new Point(1315, 787);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(114, 100);
-            panel4.TabIndex = 22;
-            panel4.Paint += panel4_Paint;
+            pnlDelete.BackgroundImage = Properties.Resources.Delete_Section3;
+            pnlDelete.BackgroundImageLayout = ImageLayout.Center;
+            pnlDelete.Controls.Add(btnDeleteCancel);
+            pnlDelete.Controls.Add(btnDeleteOk);
+            pnlDelete.Location = new Point(386, 227);
+            pnlDelete.Name = "pnlDelete";
+            pnlDelete.Size = new Size(556, 324);
+            pnlDelete.TabIndex = 21;
+            pnlDelete.Visible = false;
+            // 
+            // btnDeleteCancel
+            // 
+            btnDeleteCancel.Location = new Point(314, 223);
+            btnDeleteCancel.Name = "btnDeleteCancel";
+            btnDeleteCancel.Size = new Size(158, 51);
+            btnDeleteCancel.TabIndex = 1;
+            // 
+            // btnDeleteOk
+            // 
+            btnDeleteOk.Location = new Point(82, 223);
+            btnDeleteOk.Name = "btnDeleteOk";
+            btnDeleteOk.Size = new Size(158, 51);
+            btnDeleteOk.TabIndex = 0;
+            // 
+            // pnlAddAccHolder
+            // 
+            pnlAddAccHolder.BackColor = Color.Transparent;
+            pnlAddAccHolder.BackgroundImage = Properties.Resources._1;
+            pnlAddAccHolder.BackgroundImageLayout = ImageLayout.Center;
+            pnlAddAccHolder.Controls.Add(btnAddAccount);
+            pnlAddAccHolder.Location = new Point(1315, 787);
+            pnlAddAccHolder.Name = "pnlAddAccHolder";
+            pnlAddAccHolder.Size = new Size(114, 100);
+            pnlAddAccHolder.TabIndex = 22;
             // 
             // btnAddAccount
             // 
@@ -269,23 +298,7 @@
             btnAddAccount.Name = "btnAddAccount";
             btnAddAccount.Size = new Size(84, 74);
             btnAddAccount.TabIndex = 23;
-            btnAddAccount.Click += btnAddAccount_Click;
-            btnAddAccount.Paint += btnAddAccount_Paint;
-            // 
-            // btnlogoutok
-            // 
-            btnlogoutok.Location = new Point(85, 200);
-            btnlogoutok.Name = "btnlogoutok";
-            btnlogoutok.Size = new Size(158, 51);
-            btnlogoutok.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.BackgroundImageLayout = ImageLayout.Center;
-            panel3.Location = new Point(750, 108);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 100);
-            panel3.TabIndex = 22;
+            btnAddAccount.Click += BtnAddAccount_Click;
             // 
             // FrmMain
             // 
@@ -294,10 +307,10 @@
             BackgroundImage = Properties.Resources.MAIN_UI_Screen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1600, 941);
-            Controls.Add(flowLayoutPanelAccounts);
-            Controls.Add(panel4);
             Controls.Add(pnlCatTrigger);
             Controls.Add(pnlCatChatBubble);
+            Controls.Add(flowLayoutPanelAccounts);
+            Controls.Add(pnlAddAccHolder);
             Controls.Add(ctxMain);
             Controls.Add(btnMainContextMenu);
             DoubleBuffered = true;
@@ -311,10 +324,11 @@
             ctxMain.ResumeLayout(false);
             pnlCatChatBubble.ResumeLayout(false);
             flowLayoutPanelAccounts.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            pnldelete.ResumeLayout(false);
-            panel4.ResumeLayout(false);
+            pnlAccounts.ResumeLayout(false);
+            pnlAccounts.PerformLayout();
+            pnlLogout.ResumeLayout(false);
+            pnlDelete.ResumeLayout(false);
+            pnlAddAccHolder.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -334,20 +348,19 @@
         private Label txtCatChat;
         private Panel pnlCatTrigger;
         private FlowLayoutPanel flowLayoutPanelAccounts;
-        private Panel panel1;
-        private Label label1;
-        private Panel panel2;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label11;
-        private Panel pnldelete;
-        private Panel btndeletecancel;
-        private Panel btndeleteok;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel btnlogoutok;
+        private Panel pnlAccounts;
+        private Label lblAccounts;
+        private Label lblActions;
+        private Label lblTags;
+        private Label lblPass;
+        private Label lblEmails;
+        private Panel pnlDelete;
+        private Panel btnDeleteCancel;
+        private Panel btnDeleteOk;
+        private Panel pnlAddAccHolder;
         private Panel btnAddAccount;
-        private Panel panel3;
+        private Panel pnlLogout;
+        private Panel btnLogoutCancel;
+        private Panel btnLogoutConfirm;
     }
 }

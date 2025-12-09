@@ -465,6 +465,7 @@
             // pnlSettingsAbout
             // 
             pnlSettingsAbout.BackColor = Color.Transparent;
+            pnlSettingsAbout.BackgroundImage = Properties.Resources.Settings_Screen__About_Us_1;
             pnlSettingsAbout.Location = new Point(0, 0);
             pnlSettingsAbout.Name = "pnlSettingsAbout";
             pnlSettingsAbout.Size = new Size(1600, 980);
