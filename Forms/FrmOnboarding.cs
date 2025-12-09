@@ -15,6 +15,7 @@ namespace NekoKeep.Forms
 
             EnableDoubleBuffer(this);
             EnableDoubleBuffer(mainTabControl);
+            EnableDoubleBuffer(pnlRegisterMpinHolder);
             foreach (TabPage tabPage in mainTabControl.TabPages)
                 EnableDoubleBuffer(tabPage);
         }
@@ -49,6 +50,7 @@ namespace NekoKeep.Forms
 
             if (user == 1)
             {
+                Cursor = Cursors.WaitCursor;
                 var mainForm = new FrmMain(ctx);
                 ctx.SwitchTo(mainForm);
             }
@@ -373,6 +375,12 @@ namespace NekoKeep.Forms
         private void BtnLoginShowChangePass1_Click(object sender, EventArgs e) => ShowOrHidePassword(txtLoginChangePass1, btnLoginShowChangePass1);
 
         private void BtnLoginShowChangePass2_Click(object sender, EventArgs e) => ShowOrHidePassword(txtLoginChangePass2, btnLoginShowChangePass2);
+
+        private void MainTabControl_TabIndexChanged(object sender, EventArgs e)
+        {
+            mainTabControl.SelectedTab?.Invalidate();
+            mainTabControl.SelectedTab?.Update();
+        }
     }
 }
 

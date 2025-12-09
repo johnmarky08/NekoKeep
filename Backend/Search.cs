@@ -60,9 +60,11 @@ namespace NekoKeep.Backend
         }
 
         // Return a new list of Accounts sorted by Levenshtein distance, excluding non-matches
-        public static List<Account> Get(string searchKeyword)
+        public static List<Account> Get(string? searchKeyword)
         {
             List<Account> candidateAccounts = User.Session!.Accounts!;
+            if (searchKeyword == null) return candidateAccounts;
+
             string lowerCaseKeyword = searchKeyword.ToLower();
 
             return [.. candidateAccounts

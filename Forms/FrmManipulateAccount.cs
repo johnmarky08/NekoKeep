@@ -11,11 +11,14 @@ namespace NekoKeep
     public partial class FrmManipulateAccount : Form
     {
         private readonly AppContext ctx;
-        public FrmManipulateAccount(AppContext ctx)
+        private readonly Account? account;
+
+        public FrmManipulateAccount(AppContext ctx, Account? account = null)
         {
             InitializeComponent();
             UpdateTagPanel();
 
+            EnableDoubleBuffer(this);
             EnableDoubleBuffer(flowLayoutPanelTags);
             foreach (Panel panel in flowLayoutPanelTags.Controls)
             {
@@ -23,6 +26,35 @@ namespace NekoKeep
             }
 
             this.ctx = ctx;
+            this.account = account;
+
+            if (account != null)
+            {
+                pnlTitle.BackgroundImage = Properties.Resources.Edit_Account;
+                txtAccName.Text = account.Data.DisplayName;
+                txtAccEmail.Text = account.Data.Email;
+                txtAccNote.Text = account.Data.Note ?? string.Empty;
+
+                var tagNames = account.Data.Tags.Select(t => t.DisplayName);
+                foreach (Panel panel in flowLayoutPanelTags.Controls.OfType<Panel>())
+                {
+                    if (panel == btnAddTag) continue;
+
+                    var label = (Label)panel.Controls[0];
+                    if (tagNames.Contains(label.Text))
+                    {
+                        panel.BackgroundImage = Properties.Resources.Tag_Bg_Selected;
+                        tags.Add(label.Text);
+                    }
+                }
+
+                if (account is OAuthAccount oauthAcc)
+                {
+                    ChangeToOAuthAccountType();
+                    txtAccRequirement.Text = oauthAcc.Data.Provider;
+                }
+                else ChangeToCustomAccountType();
+            }
         }
 
         private void BtnAddTag_Click(object sender, EventArgs e) => pnlAddTag.Visible = true;
@@ -63,7 +95,6 @@ namespace NekoKeep
                 AddItemPanel(tag.DisplayName!);
             }
 
-
             // Keep Add Tag button always last
             flowLayoutPanelTags.Controls.Remove(btnAddTag);
             flowLayoutPanelTags.Controls.Add(btnAddTag);
@@ -93,7 +124,7 @@ namespace NekoKeep
                 Size = new Size(191, 54),
                 TextAlign = ContentAlignment.MiddleCenter,
                 AutoEllipsis = true,
-                Cursor = Cursors.Hand
+                Cursor = Cursors.Hand,
             };
             lbl.Click += Tag_CLick;
 
@@ -123,44 +154,88 @@ namespace NekoKeep
                 return;
             }
 
-            if (type.Equals("Custom"))
+            if (this.account == null)
             {
-                if (!Utils.ValidatePassword(typeRequirement))
+                if (type.Equals("Custom"))
                 {
-                    Utils.ThrowError("Password does not meet the required criteria.");
-                    return;
+                    if (!Utils.ValidatePassword(typeRequirement))
+                    {
+                        Utils.ThrowError("Your password must be at least 8 characters and include uppercase and lowercase letters, a number, and a special character.");
+                        return;
+                    }
+
+                    ICustomAccount account = new CustomAccountDto()
+                    {
+                        UserId = User.Session!.Id,
+                        Email = email,
+                        DisplayName = accountName,
+                        Password = typeRequirement,
+                        Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
+                        Tags = TagsDB.ResolveTags([.. tags])
+                    };
+
+                    AccountsDB.CreateAccount(account);
+                }
+                else if (type.Equals("OAuth"))
+                {
+                    IOAuthAccount account = new OAuthAccountDto()
+                    {
+                        UserId = User.Session!.Id,
+                        Email = email,
+                        DisplayName = accountName,
+                        Provider = typeRequirement,
+                        Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
+                        Tags = TagsDB.ResolveTags([.. tags])
+                    };
+
+                    AccountsDB.CreateAccount(account);
                 }
 
-                ICustomAccount account = new CustomAccountDto()
-                {
-                    UserId = User.Session!.Id,
-                    Email = email,
-                    DisplayName = accountName,
-                    Password = typeRequirement,
-                    Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
-                    Tags = TagsDB.ResolveTags([.. tags])
-                };
-
-                AccountsDB.CreateAccount(account);
+                Utils.ThrowSuccess("Account added successfully.");
             }
-            else if (type.Equals("OAuth"))
+            else
             {
-                IOAuthAccount account = new OAuthAccountDto()
+                if (type.Equals("Custom"))
                 {
-                    UserId = User.Session!.Id,
-                    Email = email,
-                    DisplayName = accountName,
-                    Provider = typeRequirement,
-                    Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
-                    Tags = TagsDB.ResolveTags([.. tags])
-                };
+                    if (!Utils.ValidatePassword(typeRequirement))
+                    {
+                        Utils.ThrowError("Your password must be at least 8 characters and include uppercase and lowercase letters, a number, and a special character.");
+                        return;
+                    }
 
-                AccountsDB.CreateAccount(account);
+                    ICustomAccount account = new CustomAccountDto()
+                    {
+                        Id = this.account.Data.Id,
+                        UserId = this.account.Data.UserId,
+                        Email = email,
+                        DisplayName = accountName,
+                        Password = typeRequirement,
+                        Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
+                        Tags = TagsDB.ResolveTags([.. tags])
+                    };
+
+                    AccountsDB.UpdateAccount(account);
+                }
+                else if (type.Equals("OAuth"))
+                {
+                    IOAuthAccount account = new OAuthAccountDto()
+                    {
+                        Id = this.account.Data.Id,
+                        UserId = this.account.Data.UserId,
+                        Email = email,
+                        DisplayName = accountName,
+                        Provider = typeRequirement,
+                        Note = string.IsNullOrWhiteSpace(notes) ? null : notes,
+                        Tags = TagsDB.ResolveTags([.. tags])
+                    };
+
+                    AccountsDB.UpdateAccount(account);
+                }
+
+                Utils.ThrowSuccess("Account edited successfully.");
             }
 
             ClearAccFields();
-            Utils.ThrowSuccess("Account added successfully.");
-
             var mainForm = new FrmMain(ctx);
             ctx.SwitchTo(mainForm);
         }
@@ -185,6 +260,17 @@ namespace NekoKeep
 
         private void BtnAccountType_Custom_Click(object sender, EventArgs e)
         {
+            if (account != null)
+            {
+                Utils.ThrowError("You are not allowed to edit an account's type.");
+                return;
+            }
+            ChangeToCustomAccountType();
+            ClearAccFields();
+        }
+
+        private void ChangeToCustomAccountType()
+        {
             btnAccountType_Custom.BackgroundImage = Properties.Resources.CustomType_Selected;
             btnAccountType_OAuth.BackgroundImage = Properties.Resources.OAuthType;
             pnlAccount.BackgroundImage = Properties.Resources.Add_Account;
@@ -193,10 +279,20 @@ namespace NekoKeep
             btnAccShowPass.Visible = true;
             txtAccRequirement.UseSystemPasswordChar = true;
             txtAccRequirement.Size = new Size(547, 47);
-            ClearAccFields();
         }
 
         private void BtnAccountType_OAuth_Click(object sender, EventArgs e)
+        {
+            if (account != null)
+            {
+                Utils.ThrowError("You are not allowed to edit an account's type.");
+                return;
+            }
+            ChangeToOAuthAccountType();
+            ClearAccFields();
+        }
+
+        private void ChangeToOAuthAccountType()
         {
             btnAccountType_OAuth.BackgroundImage = Properties.Resources.OAuthType_Selected;
             btnAccountType_Custom.BackgroundImage = Properties.Resources.CustomType;
@@ -206,7 +302,6 @@ namespace NekoKeep
             btnAccShowPass.Visible = false;
             txtAccRequirement.UseSystemPasswordChar = false;
             txtAccRequirement.Size = new Size(602, 47);
-            ClearAccFields();
         }
 
         private void ClearAccFields()
@@ -218,6 +313,7 @@ namespace NekoKeep
             tags.Clear();
             foreach (Panel panel in flowLayoutPanelTags.Controls)
             {
+                if (panel == btnAddTag) continue;
                 panel.BackgroundImage = Properties.Resources.Tag_Bg;
             }
         }

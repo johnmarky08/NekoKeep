@@ -1,4 +1,7 @@
-﻿using NekoKeep.Backend.Classes;
+﻿using NekoKeep.Backend;
+using NekoKeep.Backend.Classes;
+using NekoKeep.Backend.Databases;
+using NekoKeep.Backend.Interfaces;
 using System.Reflection;
 
 namespace NekoKeep.Forms
@@ -6,16 +9,32 @@ namespace NekoKeep.Forms
     public partial class FrmMain : Form
     {
         private readonly AppContext ctx;
+        private readonly List<ITag> currentTags = [];
+        private int nameFilterState = 0;
+        private int lastUpdatedFilterState = 0;
         public FrmMain(AppContext ctx)
         {
             InitializeComponent();
+            UpdateTagPanel();
+            Cursor = Cursors.Default;
 
             this.ctx = ctx;
+            EnableDoubleBuffer(this);
             EnableDoubleBuffer(ctxMain);
-            EnableDoubleBuffer(pnlAccounts);
             EnableDoubleBuffer(pnlCatChatBubble);
+            EnableDoubleBuffer(pnlViewPassMpinHolder);
 
             txtCatChat.Text = $"Welcome, {User.Session!.DisplayName}!";
+            btnMainContextMenu.BackgroundImage = Properties.Resources.ResourceManager.GetObject("icon_" + User.Session!.CatPresetId) as Image;
+            ReloadAccounts();
+        }
+
+        private void ReloadAccounts()
+        {
+            bool sortByDate = lastUpdatedFilterState != 0;
+            bool descending = lastUpdatedFilterState == 2 || nameFilterState == 2;
+            List<Account> accounts = User.ViewAccounts(sortByDate, descending, currentTags);
+            AddAccountsToPanel(accounts);
         }
 
         private static void EnableDoubleBuffer(Control control)
@@ -81,85 +100,142 @@ namespace NekoKeep.Forms
 
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
-            FrmManipulateAccount addForm = new(ctx);
-            //addForm.OnAccountSaved += AddAccountToPanel; // Use account panel
-            addForm.ShowDialog();
+            var manipulateAccountForm = new FrmManipulateAccount(ctx);
+            ctx.SwitchTo(manipulateAccountForm);
         }
 
-        private int currentTop = 25; // vertical position of first row
-        private readonly int rowHeight = 75;  // height of each account row
-
-        private void AddAccountToPanel(AccountData data)
+        int toDeleteId = -1;
+        (CustomAccount?, Label?) toViewPass = (null, null);
+        private void AddAccountsToPanel(List<Account> accounts)
         {
-            Panel accountPanel = new()
+            Cursor = Cursors.WaitCursor;
+            tblAccounts.Controls.Clear();
+
+            accounts = [.. accounts
+                .OrderByDescending(acc => acc is CustomAccount)];
+
+            int i = 0;
+            foreach (var accountRaw in accounts)
             {
-                Width = pnlAccounts.Width - 20,
-                Height = rowHeight,
-                Top = currentTop,
-                Left = 0,
-                BackColor = Color.Transparent
-            };
+                IAccount account = accountRaw.Data;
+                Label type = new()
+                {
+                    Text = typeof(OAuthAccount) == accountRaw.GetType() ? "OAuth" : "Custom",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(119, 45),
+                };
+                Label displayName = new()
+                {
+                    Text = account.DisplayName,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(244, 45),
+                };
+                Label email = new()
+                {
+                    Text = account.Email,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(244, 45),
+                };
+                Label req = new()
+                {
+                    Text = type.Text.Equals("OAuth") ? ((IOAuthAccount)account).Provider : "********",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(244, 45),
+                };
+                Label tags = new()
+                {
+                    Text = string.Join(", ", account.Tags.Select(tag => tag.DisplayName)),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(181, 45),
+                };
+                Panel actions = new()
+                {
+                    BackgroundImage = type.Text.Equals("OAuth") ? Properties.Resources.OAuthActions : Properties.Resources.CustomActions,
+                    BackgroundImageLayout = ImageLayout.Center,
+                    BackColor = Color.Transparent,
+                    Size = new Size(185, 39),
+                };
 
-            Font lblFont = new("Comic Sans MS", 15, FontStyle.Regular);
+                Panel editAction = new()
+                {
+                    Size = new Size(30, 30),
+                    Location = type.Text.Equals("OAuth") ? new Point(56, 5) : new Point(35, 5),
+                    Cursor = Cursors.Hand
+                };
+                editAction.Click += (s, e) =>
+                {
+                    var manipulateAccountForm = new FrmManipulateAccount(ctx, accountRaw);
+                    ctx.SwitchTo(manipulateAccountForm);
+                };
 
-            // First line: Name, Email, Password, Tags
-            Label lblName = new()
-            {
-                Text = data.Name,
-                Font = lblFont,
-                AutoSize = true,
-                Left = 16,
-                Top = 17
-            };
-            accountPanel.Controls.Add(lblName);
+                Panel deleteButton = new()
+                {
+                    Size = new Size(30, 30),
+                    Location = type.Text.Equals("OAuth") ? new Point(98, 5) : new Point(77, 5),
+                    Cursor = Cursors.Hand,
+                };
+                deleteButton.Click += (s, e) =>
+                {
+                    pnlDelete.Visible = true;
+                    toDeleteId = account.Id;
+                };
 
-            Label lblEmail = new()
-            {
-                Text = data.Email,
-                Font = lblFont,
-                AutoSize = true,
-                Left = 394,
-                Top = 17
-            };
-            accountPanel.Controls.Add(lblEmail);
+                Panel showPassButton = new()
+                {
+                    Size = new Size(30, 30),
+                    Location = new Point(119, 5),
+                    Cursor = Cursors.Hand,
+                    Visible = !type.Text.Equals("OAuth"),
+                };
+                showPassButton.Click += (s, e) =>
+                {
+                    toViewPass = ((CustomAccount)accountRaw, req);
+                    pnlViewPassMpin.Visible = true;
+                    pnlViewPassMpinHolder.Focus();
+                };
 
-            Label lblPassword = new()
-            {
-                Text = data.Password,
-                Font = lblFont,
-                AutoSize = true,
-                Left = 661,
-                Top = 17
-            };
-            accountPanel.Controls.Add(lblPassword);
+                actions.Controls.Add(editAction);
+                actions.Controls.Add(deleteButton);
+                actions.Controls.Add(showPassButton);
 
-            // 🔥 Display Tags here
-            Label lblTags = new()
-            {
-                Text = data.Tags, // comes from lblTag in FrmMainAddAccount
-                Font = lblFont,
-                AutoSize = true,
-                Left = 893,
-                Top = 17
-            };
-            accountPanel.Controls.Add(lblTags);
+                Label? note = account.Note != null ? new()
+                {
+                    Text = " Note: " + account.Note,
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    AutoEllipsis = true,
+                    Size = new Size(1056, 45),
+                } : null;
+                Label border = new()
+                {
+                    Text = "------------------------------------------------------------------------------------------------------------------------------------------------------",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(1247, 20),
+                };
 
-            // Second line: Notes
-            Label lblNotes = new()
-            {
-                Text = data.Notes,
-                Font = lblFont,
-                AutoSize = true,
-                Left = 16,
-                Top = 17 + 25
-            };
-            accountPanel.Controls.Add(lblNotes);
+                tblAccounts.Controls.Add(type, 0, i);
+                tblAccounts.Controls.Add(displayName, 1, i);
+                tblAccounts.Controls.Add(email, 2, i);
+                tblAccounts.Controls.Add(req, 3, i);
+                tblAccounts.Controls.Add(tags, 4, i);
+                tblAccounts.Controls.Add(actions, 5, i);
 
-            // Add the row panel to accountPanel
-            pnlAccounts.Controls.Add(accountPanel);
+                bool hasNote = note != null;
+                if (hasNote)
+                {
+                    tblAccounts.Controls.Add(note!, 0, ++i);
+                    tblAccounts.SetColumnSpan(note!, 6);
+                }
 
-            // Update Y position for next row
-            currentTop += rowHeight + 10;
+                tblAccounts.Controls.Add(border, 0, ++i);
+                tblAccounts.SetColumnSpan(border, 6);
+
+                i++;
+            }
+
+
+            tblAccounts.PerformLayout();
+            tblAccounts.Invalidate(true);
+            Cursor = Cursors.Default;
         }
 
         private void BtnCtxMain_Logout_Click(object sender, EventArgs e) => pnlLogout.Visible = true;
@@ -171,6 +247,218 @@ namespace NekoKeep.Forms
             User.Logout();
             var onboardingForm = new FrmOnboarding(ctx);
             ctx.SwitchTo(onboardingForm);
+        }
+
+        private void BtnDeleteOk_Click(object sender, EventArgs e)
+        {
+            if (toDeleteId == -1) return;
+
+            AccountsDB.DeleteAccount(toDeleteId);
+            toDeleteId = -1;
+            pnlDelete.Visible = false;
+            ReloadAccounts();
+            Utils.ThrowSuccess("Account deleted successfully.");
+        }
+
+        private void BtnDeleteCancel_Click(object sender, EventArgs e)
+        {
+            toDeleteId = -1;
+            pnlDelete.Visible = false;
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string? text = string.IsNullOrWhiteSpace(txtSearch.Text) ? null : txtSearch.Text;
+            List<Account> accounts = Search.Get(text);
+            AddAccountsToPanel(accounts);
+        }
+
+        private void UpdateTagPanel()
+        {
+            flowLayoutPanelFilterTags.SuspendLayout();
+            flowLayoutPanelFilterTags.Controls.Clear();
+            List<ITag> tags = TagsDB.RetrieveTags(User.Session!.Id);
+            foreach (var tag in tags)
+            {
+                AddItemPanel(tag.DisplayName!);
+            }
+
+            flowLayoutPanelFilterTags.ResumeLayout();
+        }
+
+        private void AddItemPanel(string text)
+        {
+            // Panel
+            Panel itemPanel = new()
+            {
+                Width = 191,
+                Height = 54,
+                Margin = new Padding(3),
+                BackColor = Color.Transparent,
+                BackgroundImage = Properties.Resources.Tag_Bg,
+                BackgroundImageLayout = ImageLayout.Center
+            };
+
+            // Label
+            Label lbl = new()
+            {
+                Text = text,
+                Font = new Font("Comic Sans MS", 15, FontStyle.Regular),
+                BackColor = Color.Transparent,
+                ForeColor = Color.Black,
+                Size = new Size(191, 54),
+                TextAlign = ContentAlignment.MiddleCenter,
+                AutoEllipsis = true,
+                Cursor = Cursors.Hand
+            };
+            lbl.Click += (s, e) =>
+            {
+                ITag tag = TagsDB.RetrieveTags(User.Session!.Id).First(tag => tag.DisplayName == text);
+
+                if (currentTags.Select(tag => tag.DisplayName).Contains(text))
+                {
+                    itemPanel.BackgroundImage = Properties.Resources.Tag_Bg;
+                    currentTags.Remove(tag);
+                }
+                else
+                {
+                    itemPanel.BackgroundImage = Properties.Resources.Tag_Bg_Selected;
+                    currentTags.Add(tag);
+                }
+            };
+
+            // Add label to panel
+            itemPanel.Controls.Add(lbl);
+
+            // Add panel to FlowLayoutPanel
+            flowLayoutPanelFilterTags.Controls.Add(itemPanel);
+        }
+
+        private void Tag_Click(object? sender, EventArgs e)
+        {
+            string tagName = (sender as Label)!.Text;
+            ITag tag = TagsDB.RetrieveTags(User.Session!.Id).First(tag => tag.DisplayName == tagName);
+
+            if (currentTags.Select(tag => tag.DisplayName).Contains(tagName))
+            {
+                ((Label)sender).BackgroundImage = Properties.Resources.Tag_Bg_Selected;
+                currentTags.Remove(tag);
+            }
+            else
+            {
+                ((Label)sender).BackgroundImage = Properties.Resources.Tag_Bg;
+                currentTags.Add(tag);
+            }
+        }
+
+        private void BtnFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlFilter.Visible) ReloadAccounts();
+            pnlFilter.Visible = !pnlFilter.Visible;
+        }
+
+        private void BtnFilterDisplayName_Click(object sender, EventArgs e)
+        {
+            btnFilterLastUpdated.BackgroundImage = Properties.Resources.Filter_Last_Updated_Unsellect;
+            lastUpdatedFilterState = 0;
+            nameFilterState = (nameFilterState + 1) % 3;
+
+            btnFilterDisplayName.BackgroundImage =
+                nameFilterState switch
+                {
+                    0 => Properties.Resources.Filter_Name_Unsellect,
+                    1 => Properties.Resources.Filter_Name_Ascending,
+                    _ => Properties.Resources.Filter_Name_Descending
+                };
+        }
+
+        private void BtnFilterLastUpdated_Click(object sender, EventArgs e)
+        {
+            btnFilterDisplayName.BackgroundImage = Properties.Resources.Filter_Name_Unsellect;
+            nameFilterState = 0;
+            lastUpdatedFilterState = (lastUpdatedFilterState + 1) % 3;
+
+            btnFilterLastUpdated.BackgroundImage =
+                lastUpdatedFilterState switch
+                {
+                    0 => Properties.Resources.Filter_Last_Updated_Unsellect,
+                    1 => Properties.Resources.Last_Updated_Ascending,
+                    _ => Properties.Resources.Last_Update_Descending
+                };
+        }
+
+        private string mpin = "";
+        private void PnlViewPassMpinHolder_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (mpin.Length > 0)
+                    mpin = mpin[..^1];
+                e.Handled = true;
+            }
+            else if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                if (mpin.Length < 6)
+                {
+                    char digit = (char)('0' + (e.KeyCode - Keys.D0));
+                    mpin += digit;
+                }
+                e.Handled = true;
+            }
+            else if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                if (mpin.Length < 6)
+                {
+                    char digit = (char)('0' + (e.KeyCode - Keys.NumPad0));
+                    mpin += digit;
+                }
+                e.Handled = true;
+            }
+
+            UpdateMpinDisplay();
+        }
+
+        private void UpdateMpinDisplay()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                var results = pnlViewPassMpinHolder.Controls.Find("viewPassMpin_" + i, true);
+                if (results.Length > 0 && results[0] is Panel panel)
+                {
+                    panel.BackgroundImage = i <= mpin.Length
+                        ? Properties.Resources.Asterisk
+                        : Properties.Resources.MPIN_Blank;
+
+                    panel.Invalidate();
+                    panel.Update();
+                }
+            }
+        }
+
+        private void ClearMpinDisplay()
+        {
+            mpin = "";
+            UpdateMpinDisplay();
+        }
+
+        private void BtnViewPassCancel_Click(object sender, EventArgs e)
+        {
+            ClearMpinDisplay();
+            pnlViewPassMpin.Visible = false;
+        }
+
+        private void BtnViewPassConfirm_Click(object sender, EventArgs e)
+        {
+            if (!Utils.ValidateMpin(mpin)) Utils.ThrowError("The MPIN you entered is not valid.");
+            else if (!User.VerifyMpin(mpin)) Utils.ThrowError("The MPIN you entered is incorrect.");
+            else
+            {
+                string decryptedPass = toViewPass.Item1!.ViewPassword(mpin);
+                toViewPass.Item2!.Text = decryptedPass;
+            }
+
+            ClearMpinDisplay();
+            pnlViewPassMpin.Visible = false;
         }
     }
 }

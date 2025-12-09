@@ -273,6 +273,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Asterisk {
+            get {
+                object obj = ResourceManager.GetObject("Asterisk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Backup {
             get {
                 object obj = ResourceManager.GetObject("Backup", resourceCulture);
@@ -373,6 +383,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CustomActions {
+            get {
+                object obj = ResourceManager.GetObject("CustomActions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CustomType {
             get {
                 object obj = ResourceManager.GetObject("CustomType", resourceCulture);
@@ -443,6 +463,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Edit_Account {
+            get {
+                object obj = ResourceManager.GetObject("Edit Account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Edit_Icon_1 {
             get {
                 object obj = ResourceManager.GetObject("Edit Icon 1", resourceCulture);
@@ -473,9 +503,69 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Filter {
+            get {
+                object obj = ResourceManager.GetObject("Filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Last_Updated_Unsellect {
+            get {
+                object obj = ResourceManager.GetObject("Filter Last Updated Unsellect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Name_Ascending {
+            get {
+                object obj = ResourceManager.GetObject("Filter Name Ascending", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Name_Descending {
+            get {
+                object obj = ResourceManager.GetObject("Filter Name Descending", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Name_Unsellect {
+            get {
+                object obj = ResourceManager.GetObject("Filter Name Unsellect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Filter_Page {
             get {
                 object obj = ResourceManager.GetObject("Filter Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter_Page1 {
+            get {
+                object obj = ResourceManager.GetObject("Filter Page1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,6 +633,46 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_2 {
+            get {
+                object obj = ResourceManager.GetObject("icon_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_3 {
+            get {
+                object obj = ResourceManager.GetObject("icon_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_4 {
+            get {
+                object obj = ResourceManager.GetObject("icon_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap import_btn {
             get {
                 object obj = ResourceManager.GetObject("import_btn", resourceCulture);
@@ -556,6 +686,26 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap import_btn_disable {
             get {
                 object obj = ResourceManager.GetObject("import_btn_disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Last_Update_Descending {
+            get {
+                object obj = ResourceManager.GetObject("Last Update Descending", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Last_Updated_Ascending {
+            get {
+                object obj = ResourceManager.GetObject("Last Updated Ascending", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -853,6 +1003,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap OAuthActions {
+            get {
+                object obj = ResourceManager.GetObject("OAuthActions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap OAuthType {
             get {
                 object obj = ResourceManager.GetObject("OAuthType", resourceCulture);
@@ -1036,6 +1196,16 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap Type_Custom_Drop_Down1 {
             get {
                 object obj = ResourceManager.GetObject("Type Custom Drop Down1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ViewPassMPIN {
+            get {
+                object obj = ResourceManager.GetObject("ViewPassMPIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

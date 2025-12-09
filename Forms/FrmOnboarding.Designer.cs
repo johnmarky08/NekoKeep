@@ -107,6 +107,7 @@
             mainTabControl.TabIndex = 0;
             mainTabControl.TabStop = false;
             mainTabControl.SelectedIndexChanged += MainTabControl_SelectedIndexChanged;
+            mainTabControl.TabIndexChanged += MainTabControl_TabIndexChanged;
             // 
             // tabLoginPage
             // 
