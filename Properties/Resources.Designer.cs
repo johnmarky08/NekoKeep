@@ -393,6 +393,16 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CustomActions_Show {
+            get {
+                object obj = ResourceManager.GetObject("CustomActions_Show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CustomType {
             get {
                 object obj = ResourceManager.GetObject("CustomType", resourceCulture);
@@ -463,6 +473,26 @@ namespace NekoKeep.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Delete_Tag {
+            get {
+                object obj = ResourceManager.GetObject("Delete Tag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Delete_User {
+            get {
+                object obj = ResourceManager.GetObject("Delete User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Edit_Account {
             get {
                 object obj = ResourceManager.GetObject("Edit Account", resourceCulture);
@@ -476,6 +506,16 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap Edit_Icon_1 {
             get {
                 object obj = ResourceManager.GetObject("Edit Icon 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Edit_Tag {
+            get {
+                object obj = ResourceManager.GetObject("Edit Tag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1166,6 +1206,16 @@ namespace NekoKeep.Properties {
         public static System.Drawing.Bitmap Tag_Bg_Selected {
             get {
                 object obj = ResourceManager.GetObject("Tag_Bg_Selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Trash {
+            get {
+                object obj = ResourceManager.GetObject("Trash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

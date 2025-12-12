@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
-            btnCloseMainContectMenu_Profile = new Panel();
+            btnCloseMainContextMenu_Profile = new Panel();
             txtSettingsProfile_DisplayName = new TextBox();
             picSettingsProfile_CatTheme = new PictureBox();
             btnSettingsProfile_Back = new Panel();
@@ -38,15 +38,15 @@
             ((System.ComponentModel.ISupportInitialize)picSettingsProfile_CatTheme).BeginInit();
             SuspendLayout();
             // 
-            // btnCloseMainContectMenu_Profile
+            // btnCloseMainContextMenu_Profile
             // 
-            btnCloseMainContectMenu_Profile.BackColor = Color.Transparent;
-            btnCloseMainContectMenu_Profile.Cursor = Cursors.Hand;
-            btnCloseMainContectMenu_Profile.Location = new Point(1516, 40);
-            btnCloseMainContectMenu_Profile.Name = "btnCloseMainContectMenu_Profile";
-            btnCloseMainContectMenu_Profile.Size = new Size(61, 61);
-            btnCloseMainContectMenu_Profile.TabIndex = 0;
-            btnCloseMainContectMenu_Profile.Click += BtnCloseMainContectMenu_Profile_Click;
+            btnCloseMainContextMenu_Profile.BackColor = Color.Transparent;
+            btnCloseMainContextMenu_Profile.Cursor = Cursors.Hand;
+            btnCloseMainContextMenu_Profile.Location = new Point(1516, 40);
+            btnCloseMainContextMenu_Profile.Name = "btnCloseMainContextMenu_Profile";
+            btnCloseMainContextMenu_Profile.Size = new Size(61, 61);
+            btnCloseMainContextMenu_Profile.TabIndex = 0;
+            btnCloseMainContextMenu_Profile.Click += BtnCloseMainContextMenu_Profile_Click;
             // 
             // txtSettingsProfile_DisplayName
             // 
@@ -113,7 +113,7 @@
             Controls.Add(btnSettingsProfile_Back);
             Controls.Add(picSettingsProfile_CatTheme);
             Controls.Add(txtSettingsProfile_DisplayName);
-            Controls.Add(btnCloseMainContectMenu_Profile);
+            Controls.Add(btnCloseMainContextMenu_Profile);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private Panel btnCloseMainContectMenu_Profile;
+        private Panel btnCloseMainContextMenu_Profile;
         private TextBox txtSettingsProfile_DisplayName;
         private PictureBox picSettingsProfile_CatTheme;
         private Panel btnSettingsProfile_Back;

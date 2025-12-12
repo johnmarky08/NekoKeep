@@ -331,5 +331,16 @@ namespace NekoKeep.Forms
                 && type.Equals("mpin")
                 && ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                     || (sender is TextBox tb && tb.Text.Length >= 6 && !char.IsControl(e.KeyChar)));
+
+        private void BtnDeleteAcc_Click(object sender, EventArgs e) => pnlDeleteUser.Visible = true;
+
+        private void BtnCancelDeleteUser_Click(object sender, EventArgs e) => pnlDeleteUser.Visible = false;
+
+        private void BtnDeleteUser_Click(object sender, EventArgs e)
+        {
+            UsersDB.DeleteUser(User.Session!.Id);
+            Utils.ThrowSuccess("Your account has been deleted successfully. Logging out...");
+            ctx.SwitchTo(new FrmOnboarding(ctx));
+        }
     }
 }

@@ -34,6 +34,10 @@
             btnSettingsAbout = new Panel();
             btnCloseMainContextMenu = new Panel();
             pnlSettingsAccount = new Panel();
+            pnlDeleteUser = new Panel();
+            btnCancelDeleteUser = new Panel();
+            btnDeleteUser = new Panel();
+            btnDeleteAcc = new Panel();
             lblSettingsMpin = new Label();
             lblSettingsPassword = new Label();
             lblEmail = new Label();
@@ -67,6 +71,7 @@
             saveFileDialog = new SaveFileDialog();
             pnlSettingsAbout = new Panel();
             pnlSettingsAccount.SuspendLayout();
+            pnlDeleteUser.SuspendLayout();
             pnlSettingsChange.SuspendLayout();
             pnlSettingsBackup.SuspendLayout();
             pnlSettingsBackupMpinHolder.SuspendLayout();
@@ -123,6 +128,8 @@
             pnlSettingsAccount.BackColor = Color.Transparent;
             pnlSettingsAccount.BackgroundImage = Properties.Resources.Settings_Account;
             pnlSettingsAccount.BackgroundImageLayout = ImageLayout.None;
+            pnlSettingsAccount.Controls.Add(pnlDeleteUser);
+            pnlSettingsAccount.Controls.Add(btnDeleteAcc);
             pnlSettingsAccount.Controls.Add(lblSettingsMpin);
             pnlSettingsAccount.Controls.Add(lblSettingsPassword);
             pnlSettingsAccount.Controls.Add(lblEmail);
@@ -133,6 +140,47 @@
             pnlSettingsAccount.Name = "pnlSettingsAccount";
             pnlSettingsAccount.Size = new Size(1600, 960);
             pnlSettingsAccount.TabIndex = 4;
+            // 
+            // pnlDeleteUser
+            // 
+            pnlDeleteUser.BackgroundImage = Properties.Resources.Delete_User;
+            pnlDeleteUser.BackgroundImageLayout = ImageLayout.Center;
+            pnlDeleteUser.Controls.Add(btnCancelDeleteUser);
+            pnlDeleteUser.Controls.Add(btnDeleteUser);
+            pnlDeleteUser.Location = new Point(506, 270);
+            pnlDeleteUser.Name = "pnlDeleteUser";
+            pnlDeleteUser.Size = new Size(630, 284);
+            pnlDeleteUser.TabIndex = 8;
+            pnlDeleteUser.Visible = false;
+            // 
+            // btnCancelDeleteUser
+            // 
+            btnCancelDeleteUser.Cursor = Cursors.Hand;
+            btnCancelDeleteUser.Location = new Point(365, 173);
+            btnCancelDeleteUser.Name = "btnCancelDeleteUser";
+            btnCancelDeleteUser.Size = new Size(155, 49);
+            btnCancelDeleteUser.TabIndex = 1;
+            btnCancelDeleteUser.Click += BtnCancelDeleteUser_Click;
+            // 
+            // btnDeleteUser
+            // 
+            btnDeleteUser.Cursor = Cursors.Hand;
+            btnDeleteUser.Location = new Point(111, 173);
+            btnDeleteUser.Name = "btnDeleteUser";
+            btnDeleteUser.Size = new Size(155, 49);
+            btnDeleteUser.TabIndex = 0;
+            btnDeleteUser.Click += BtnDeleteUser_Click;
+            // 
+            // btnDeleteAcc
+            // 
+            btnDeleteAcc.BackgroundImage = Properties.Resources.Trash;
+            btnDeleteAcc.BackgroundImageLayout = ImageLayout.Stretch;
+            btnDeleteAcc.Cursor = Cursors.Hand;
+            btnDeleteAcc.Location = new Point(1458, 816);
+            btnDeleteAcc.Name = "btnDeleteAcc";
+            btnDeleteAcc.Size = new Size(60, 60);
+            btnDeleteAcc.TabIndex = 7;
+            btnDeleteAcc.Click += BtnDeleteAcc_Click;
             // 
             // lblSettingsMpin
             // 
@@ -482,11 +530,11 @@
             Controls.Add(btnSettingsAccount);
             Controls.Add(btnSettingsBackup);
             Controls.Add(btnSettingsAbout);
+            Controls.Add(pnlSettingsAccount);
             Controls.Add(pnlSettingsAbout);
             Controls.Add(pnlSettingsBackupMpinHolder);
             Controls.Add(pnlSettingsBackup);
             Controls.Add(pnlSettingsChange);
-            Controls.Add(pnlSettingsAccount);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
@@ -495,6 +543,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NekoKeep";
             pnlSettingsAccount.ResumeLayout(false);
+            pnlDeleteUser.ResumeLayout(false);
             pnlSettingsChange.ResumeLayout(false);
             pnlSettingsChange.PerformLayout();
             pnlSettingsBackup.ResumeLayout(false);
@@ -542,5 +591,9 @@
         private Panel backupMpin_3;
         private Panel btnBackupStartExport;
         private Panel pnlSettingsAbout;
+        private Panel btnDeleteAcc;
+        private Panel pnlDeleteUser;
+        private Panel btnCancelDeleteUser;
+        private Panel btnDeleteUser;
     }
 }

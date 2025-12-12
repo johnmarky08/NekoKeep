@@ -252,6 +252,7 @@
             // 
             tblAccounts.AutoScroll = true;
             tblAccounts.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tblAccounts.BackColor = Color.Transparent;
             tblAccounts.ColumnCount = 6;
             tblAccounts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             tblAccounts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));

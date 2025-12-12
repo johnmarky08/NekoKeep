@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManipulateAccount));
             pnlTitle = new Panel();
             pnlAccount = new Panel();
             btnAccX = new Panel();
+            pnlDeleteTag = new Panel();
+            btnCancelDeleteTag = new Panel();
+            btnDeleteTag = new Panel();
             btnAccShowPass = new Panel();
             pnlAddTag = new Panel();
             btnTagX = new Panel();
@@ -46,9 +50,14 @@
             txtAccName = new TextBox();
             flowLayoutPanelTags = new FlowLayoutPanel();
             btnAddTag = new Panel();
+            ctxTag = new ContextMenuStrip(components);
+            editToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             pnlAccount.SuspendLayout();
+            pnlDeleteTag.SuspendLayout();
             pnlAddTag.SuspendLayout();
             flowLayoutPanelTags.SuspendLayout();
+            ctxTag.SuspendLayout();
             SuspendLayout();
             // 
             // pnlTitle
@@ -67,6 +76,7 @@
             pnlAccount.BackgroundImage = Properties.Resources.Add_Account;
             pnlAccount.BackgroundImageLayout = ImageLayout.Center;
             pnlAccount.Controls.Add(btnAccX);
+            pnlAccount.Controls.Add(pnlDeleteTag);
             pnlAccount.Controls.Add(btnAccShowPass);
             pnlAccount.Controls.Add(pnlAddTag);
             pnlAccount.Controls.Add(btnAccountType_OAuth);
@@ -93,6 +103,37 @@
             btnAccX.Size = new Size(40, 40);
             btnAccX.TabIndex = 4;
             btnAccX.Click += BtnAccX_Click;
+            // 
+            // pnlDeleteTag
+            // 
+            pnlDeleteTag.BackColor = Color.Transparent;
+            pnlDeleteTag.BackgroundImage = Properties.Resources.Delete_Tag;
+            pnlDeleteTag.BackgroundImageLayout = ImageLayout.Center;
+            pnlDeleteTag.Controls.Add(btnCancelDeleteTag);
+            pnlDeleteTag.Controls.Add(btnDeleteTag);
+            pnlDeleteTag.Location = new Point(251, 188);
+            pnlDeleteTag.Name = "pnlDeleteTag";
+            pnlDeleteTag.Size = new Size(602, 274);
+            pnlDeleteTag.TabIndex = 2;
+            pnlDeleteTag.Visible = false;
+            // 
+            // btnCancelDeleteTag
+            // 
+            btnCancelDeleteTag.Cursor = Cursors.Hand;
+            btnCancelDeleteTag.Location = new Point(350, 183);
+            btnCancelDeleteTag.Name = "btnCancelDeleteTag";
+            btnCancelDeleteTag.Size = new Size(155, 47);
+            btnCancelDeleteTag.TabIndex = 1;
+            btnCancelDeleteTag.Click += BtnCancelDeleteTag_Click;
+            // 
+            // btnDeleteTag
+            // 
+            btnDeleteTag.Cursor = Cursors.Hand;
+            btnDeleteTag.Location = new Point(96, 183);
+            btnDeleteTag.Name = "btnDeleteTag";
+            btnDeleteTag.Size = new Size(155, 47);
+            btnDeleteTag.TabIndex = 0;
+            btnDeleteTag.Click += BtnDeleteTag_Click;
             // 
             // btnAccShowPass
             // 
@@ -243,6 +284,27 @@
             btnAddTag.TabIndex = 0;
             btnAddTag.Click += BtnAddTag_Click;
             // 
+            // ctxTag
+            // 
+            ctxTag.BackColor = Color.White;
+            ctxTag.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
+            ctxTag.Name = "ctxTag";
+            ctxTag.Size = new Size(181, 70);
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(180, 22);
+            editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += EditToolStripMenuItem_Click;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += DeleteToolStripMenuItem_Click;
+            // 
             // FrmManipulateAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -259,9 +321,11 @@
             Text = "NekoKeep";
             pnlAccount.ResumeLayout(false);
             pnlAccount.PerformLayout();
+            pnlDeleteTag.ResumeLayout(false);
             pnlAddTag.ResumeLayout(false);
             pnlAddTag.PerformLayout();
             flowLayoutPanelTags.ResumeLayout(false);
+            ctxTag.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -284,5 +348,11 @@
         private Panel btnAccShowPass;
         private Panel btnAccX;
         private Panel btnTagX;
+        private ContextMenuStrip ctxTag;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
+        private Panel pnlDeleteTag;
+        private Panel btnCancelDeleteTag;
+        private Panel btnDeleteTag;
     }
 }

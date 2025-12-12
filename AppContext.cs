@@ -13,6 +13,7 @@
             MainForm.Invalidate();
             MainForm.Update();
             MainForm.Show();
+            old?.Hide();
             old?.Close();
         }
     }

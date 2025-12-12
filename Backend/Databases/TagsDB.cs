@@ -95,6 +95,16 @@ namespace NekoKeep.Backend.Databases
             cmd.Parameters.AddWithValue("@display_name", tag.DisplayName);
             cmd.Parameters.AddWithValue("@tag_id", tag.Id);
             cmd.ExecuteNonQuery();
+
+            // Update tags in all current accounts
+            User.Session!.Accounts!.ForEach(account =>
+            {
+                if (account.Data.Tags.Any(t => t.Id == tag.Id))
+                {
+                    var tagToUpdate = account.Data.Tags.First(t => t.Id == tag.Id);
+                    tagToUpdate.DisplayName = tag.DisplayName;
+                }
+            });
         }
 
         // Delete tag
@@ -105,6 +115,9 @@ namespace NekoKeep.Backend.Databases
             using var cmd = new MySqlCommand(sql, connection);
             cmd.Parameters.AddWithValue("@tag_id", tagId);
             cmd.ExecuteNonQuery();
+
+            // Remove tag from all current accounts
+            User.Session!.Accounts!.ForEach(account => account.Data.Tags.RemoveAll(t => t.Id == tagId));
         }
 
         // Resolve tag with tag names
@@ -112,21 +125,18 @@ namespace NekoKeep.Backend.Databases
         {
             int userId = User.Session!.Id;
             var tags = new List<ITag>();
-            List<ITag> currentTags = TagsDB.RetrieveTags(userId);
+            List<ITag> currentTags = RetrieveTags(userId);
 
             foreach (var name in tagNames)
             {
                 if (string.IsNullOrWhiteSpace(name)) continue;
                 ITag? existingTag = currentTags.FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase));
 
-                if (existingTag != null)
-                {
-                    tags.Add(existingTag);
-                }
+                if (existingTag != null) tags.Add(existingTag);
                 else
                 {
-                    TagsDB.CreateTag(userId, name);
-                    ITag newTag = TagsDB.RetrieveTags(userId).FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase))!;
+                    CreateTag(userId, name);
+                    ITag newTag = RetrieveTags(userId).FirstOrDefault(t => t.DisplayName!.Equals(name, StringComparison.OrdinalIgnoreCase))!;
                     tags.Add(newTag);
                 }
             }

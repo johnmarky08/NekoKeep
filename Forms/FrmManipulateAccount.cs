@@ -12,6 +12,7 @@ namespace NekoKeep
     {
         private readonly AppContext ctx;
         private readonly Account? account;
+        private ITag? editingTag = null;
 
         public FrmManipulateAccount(AppContext ctx, Account? account = null)
         {
@@ -57,7 +58,13 @@ namespace NekoKeep
             }
         }
 
-        private void BtnAddTag_Click(object sender, EventArgs e) => pnlAddTag.Visible = true;
+        private void BtnAddTag_Click(object sender, EventArgs e)
+        {
+            editingTag = null;
+            pnlAddTag.BackgroundImage = Properties.Resources.AddTag;
+            txtTagName.Clear();
+            pnlAddTag.Visible = true;
+        }
 
         private static void EnableDoubleBuffer(Control control)
         {
@@ -73,13 +80,33 @@ namespace NekoKeep
                 Utils.ThrowError("Tag name cannot be empty.");
                 return;
             }
-            else if (TagsDB.RetrieveAccountTags(User.Session!.Id).Select(tag => tag.DisplayName).Contains(txtTagName.Text))
+
+            var allTags = TagsDB.RetrieveTags(User.Session!.Id);
+            ITag? tag = allTags.FirstOrDefault(tag => tag?.DisplayName == tagName, null);
+
+            if (tag != null)
             {
                 Utils.ThrowError("Tag name already exists.");
                 return;
             }
+            else if (editingTag == null)
+            {
+                TagsDB.CreateTag(User.Session!.Id, tagName);
+                Utils.ThrowSuccess("Tag added successfully.");
+            }
+            else
+            {
+                if (tags.Contains(editingTag.DisplayName!))
+                {
+                    tags.Remove(editingTag.DisplayName!);
+                    tags.Add(tagName);
+                }
 
-            TagsDB.CreateTag(User.Session!.Id, tagName);
+                editingTag.DisplayName = tagName;
+                TagsDB.UpdateTag(editingTag);
+                Utils.ThrowSuccess("Tag updated successfully.");
+            }
+
             txtTagName.Clear();
             pnlAddTag.Visible = false;
             UpdateTagPanel();
@@ -90,10 +117,7 @@ namespace NekoKeep
             flowLayoutPanelTags.SuspendLayout();
             flowLayoutPanelTags.Controls.Clear();
             List<ITag> tags = TagsDB.RetrieveTags(User.Session!.Id);
-            foreach (var tag in tags)
-            {
-                AddItemPanel(tag.DisplayName!);
-            }
+            foreach (var tag in tags) AddItemPanel(tag.DisplayName!);
 
             // Keep Add Tag button always last
             flowLayoutPanelTags.Controls.Remove(btnAddTag);
@@ -110,7 +134,7 @@ namespace NekoKeep
                 Height = 54,
                 Margin = new Padding(3),
                 BackColor = Color.Transparent,
-                BackgroundImage = Properties.Resources.Tag_Bg,
+                BackgroundImage = tags.Contains(text) ? Properties.Resources.Tag_Bg_Selected : Properties.Resources.Tag_Bg,
                 BackgroundImageLayout = ImageLayout.Center
             };
 
@@ -125,6 +149,7 @@ namespace NekoKeep
                 TextAlign = ContentAlignment.MiddleCenter,
                 AutoEllipsis = true,
                 Cursor = Cursors.Hand,
+                ContextMenuStrip = ctxTag
             };
             lbl.Click += Tag_CLick;
 
@@ -154,7 +179,7 @@ namespace NekoKeep
                 return;
             }
 
-            if (this.account == null)
+            if (account == null)
             {
                 if (type.Equals("Custom"))
                 {
@@ -342,6 +367,40 @@ namespace NekoKeep
         {
             var mainForm = new FrmMain(ctx);
             ctx.SwitchTo(mainForm);
+        }
+
+        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string tagName = ctxTag.SourceControl!.Text;
+            editingTag = TagsDB.RetrieveTags(User.Session!.Id).First(tag => tag.DisplayName!.Equals(tagName));
+            pnlAddTag.BackgroundImage = Properties.Resources.Edit_Tag;
+            txtTagName.Text = tagName;
+            pnlAddTag.Visible = true;
+        }
+
+        string? toDeleteTag = null;
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toDeleteTag = ctxTag.SourceControl!.Text;
+            pnlDeleteTag.Visible = true;
+        }
+
+        private void BtnDeleteTag_Click(object sender, EventArgs e)
+        {
+            int tagId = TagsDB.RetrieveTags(User.Session!.Id).First(tag => tag.DisplayName!.Equals(toDeleteTag)).Id;
+            TagsDB.DeleteTag(tagId);
+            Utils.ThrowSuccess("Tag deleted successfully.");
+            UpdateTagPanel();
+
+            tags.Remove(toDeleteTag!);
+            toDeleteTag = null;
+            pnlDeleteTag.Visible = false;
+        }
+
+        private void BtnCancelDeleteTag_Click(object sender, EventArgs e)
+        {
+            toDeleteTag = null;
+            pnlDeleteTag.Visible = false;
         }
     }
 }

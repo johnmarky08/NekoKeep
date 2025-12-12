@@ -32,10 +32,10 @@ namespace NekoKeep.Forms
             };
         }
 
-        private void BtnCloseMainContectMenu_Profile_Click(object sender, EventArgs e)
+        private void BtnCloseMainContextMenu_Profile_Click(object sender, EventArgs e)
         {
             var mainForm = new FrmMain(ctx);
-            mainForm.Show();
+            ctx.SwitchTo(mainForm);
         }
 
         private void BtnSettingsProfile_Back_Click(object sender, EventArgs e)
