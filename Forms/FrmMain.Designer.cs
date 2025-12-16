@@ -147,6 +147,7 @@
             // 
             // txtCatChat
             // 
+            txtCatChat.AutoEllipsis = true;
             txtCatChat.Font = new Font("Comic Sans MS", 18F);
             txtCatChat.Location = new Point(17, 27);
             txtCatChat.Name = "txtCatChat";
