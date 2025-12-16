@@ -20,6 +20,7 @@ namespace NekoKeep
             using (var splash = new FrmLoading())
             {
                 splash.ShowDialog();
+                if (!splash.IsSuccessful) return;
             }
 
             var ctx = new AppContext();

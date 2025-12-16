@@ -4,8 +4,8 @@ namespace NekoKeep.Backend
 {
     /**
      * Levenshtein Distance Algorithm
-     * Time Complexity: O(k * m * n + k log k)
-     * Space Complexity: O(m * n + k)
+     * Time Complexity: O(n * m)
+     * Space Complexity: O(n * m) | O(min(n, m))
      * Stability: Stable
      */
     public static class Search

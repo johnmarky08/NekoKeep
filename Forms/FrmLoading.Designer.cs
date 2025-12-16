@@ -56,6 +56,7 @@
             Name = "FrmLoadingScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NekoKeep - Loading";
+            Shown += FrmLoadingScreen_Shown;
             ((System.ComponentModel.ISupportInitialize)loadingGif).EndInit();
             ResumeLayout(false);
         }

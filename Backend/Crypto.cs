@@ -4,8 +4,8 @@ using System.Text;
 namespace NekoKeep.Backend
 {
     /**
-     * AES-256-GCM Cryptography
-     * Space and Time Complexity: O(n) where n is the size of the plaintext/ciphertext in bytes (Both encryption and decryption)
+     * AES-GCM Cryptography
+     * Space and Time Complexity: O(n) and O(1) where n is the size of the plaintext/ciphertext in bytes (Both encryption and decryption)
      */
 
     public static class Crypto
